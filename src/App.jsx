@@ -148,7 +148,7 @@ function App() {
                 </md-elevated-card>
                 <md-elevated-card>
                     <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundImage: 'url("majs.png")', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
-                        <img src="s1logo.png" alt="Majestic" style={{ width: '100%' }} />
+                        <img src="s1logo.png" alt="Majestic" style={{ width: '50vw' }} /><br></br>
                         <Button appearance="primary" onClick={() => window.open('https://drive.usercontent.google.com/download?id=1LIxNJVkE6x7FCBAJHTKxb7Bq4IjC3fKi&export=download&authuser=0')}>
                             <md-icon slot="icon" style={{ marginRight:'0.25em' }}>download</md-icon>
                             Download
@@ -157,7 +157,7 @@ function App() {
                 </md-elevated-card>
             </div>
             <div id="members-tab" role="tabpanel" aria-labelledby="members" style={{ display: 'none' }}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <div style={{ textAlign:'center', }}>
                     <h1>Under Construction</h1>
                     <p>Silly hasn't finished this part yet, that lazy bum.</p>
                 </div>
