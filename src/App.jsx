@@ -193,7 +193,7 @@ function App() {
                 <md-elevated-card>
                     <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
                         <img src="app.png" alt="App Logo" style={{ width: '50vw' }} /><br></br>
-                        <Button appearance="primary" onClick={() => window.open('/downloads/DivergenceApp0.1.12.msix')}>
+                        <Button appearance="primary" onClick={() => window.open('/downloads/Divergence.msix')}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.25em" viewBox="0,0,256,256" style={{marginRight:'0.25em'}}>
 <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode:"normal"}}><g transform="scale(5.12,5.12)"><path d="M4,4h20v20h-20zM26,4h20v20h-20zM4,26h20v20h-20zM26,26h20v20h-20z"></path></g></g>
 </svg>
