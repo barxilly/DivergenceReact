@@ -20,14 +20,25 @@ function App() {
                 document.getElementById('home-tab').style.display = 'block';
                 document.getElementById('members-tab').style.display = 'none';
                 document.getElementById('join-tab').style.display = 'none';
-            } else if (event.target.activeTabIndex === 1) {
+                document.getElementById('downloads-tab').style.display = 'none';
+            }
+            if (event.target.activeTabIndex === 1) {
                 document.getElementById('home-tab').style.display = 'none';
                 document.getElementById('members-tab').style.display = 'block';
                 document.getElementById('join-tab').style.display = 'none';
-            } else if (event.target.activeTabIndex === 2) {
+                document.getElementById('downloads-tab').style.display = 'none';
+            }
+            if (event.target.activeTabIndex === 2) {
                 document.getElementById('home-tab').style.display = 'none';
                 document.getElementById('members-tab').style.display = 'none';
                 document.getElementById('join-tab').style.display = 'block';
+                document.getElementById('downloads-tab').style.display = 'none';
+            }
+            if (event.target.activeTabIndex === 3) {
+                document.getElementById('home-tab').style.display = 'none';
+                document.getElementById('members-tab').style.display = 'none';
+                document.getElementById('join-tab').style.display = 'none';
+                document.getElementById('downloads-tab').style.display = 'block';
             }
         };
 
@@ -66,6 +77,10 @@ function App() {
                 <md-primary-tab id="join" aria-controls="join-tab">
                     <md-icon slot="icon">group_add</md-icon>
                     Join
+                </md-primary-tab>
+                <md-primary-tab id="downloads" aria-controls="downloads-tab">
+                    <md-icon slot="icon">download</md-icon>
+                    Downloads
                 </md-primary-tab>
             </md-tabs>
             <div id="home-tab" role="tabpanel" aria-labelledby="home">
@@ -164,6 +179,28 @@ function App() {
             </div>
             <div id="join-tab" role="tabpanel" aria-labelledby="join" style={{ display: 'none' }}>
                 <div data-tf-live="01HVKMRWGKHXWHF32Y07XGTH3A"></div>
+            </div>
+            <div id="downloads-tab" role="tabpanel" aria-labelledby="downloads" style={{ display: 'none' }}>
+                <md-elevated-card>
+                    <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundImage: 'url("majs.png")', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
+                        <img src="s1logo.png" alt="Majestic" style={{ width: '50vw' }} /><br></br>
+                        <Button appearance="primary" onClick={() => window.open('https://drive.usercontent.google.com/download?id=1LIxNJVkE6x7FCBAJHTKxb7Bq4IjC3fKi&export=download&authuser=0')}>
+                            <md-icon slot="icon" style={{ marginRight:'0.25em' }}>download</md-icon>
+                            Download
+                        </Button>
+                    </md-card-content>
+                </md-elevated-card>
+                <md-elevated-card>
+                    <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
+                        <img src="app.png" alt="App Logo" style={{ width: '50vw' }} /><br></br>
+                        <Button appearance="primary" onClick={() => window.open('/downloads/DivergenceApp0.1.12.msix')}>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.25em" viewBox="0,0,256,256" style={{marginRight:'0.25em'}}>
+<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode:"normal"}}><g transform="scale(5.12,5.12)"><path d="M4,4h20v20h-20zM26,4h20v20h-20zM4,26h20v20h-20zM26,26h20v20h-20z"></path></g></g>
+</svg>
+                            Download
+                        </Button>
+                    </md-card-content>
+                    </md-elevated-card>
             </div>
         </div>
     );
