@@ -4,6 +4,7 @@ import '@material/web/tabs/primary-tab';
 import '@material/web/icon/icon';
 import '@material/web/labs/card/elevated-card';
 import '@material/web/labs/card/outlined-card';
+import { FaJava } from 'react-icons/fa';
 
 // app.css
 import './index.css';
@@ -96,8 +97,8 @@ function App() {
                     </md-card-content>
                 </md-elevated-card>
                 <md-elevated-card style={{ whiteSpace: 'nowrap', overflow: 'hidden', padding: '1em' }}>
-                    <md-card-content id="memberfolk" style={{ display: 'ruby',  overflow: 'scroll', whiteSpace: 'nowrap', justifyContent: 'center' }}>
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                    <md-card-content id="memberfolk" style={{ display: 'ruby', overflow: 'scroll', whiteSpace: 'nowrap', justifyContent: 'center' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://youtube.com/@kat.beanie">
                                     <img src="kat.jpg" alt="Kat" style={{ width: '100%', borderRadius: '5px' }} />
@@ -106,7 +107,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://twitch.tv/diggintruths">
                                     <img src="diggin.jpg" alt="Diggin" style={{ width: '100%', borderRadius: '5px' }} />
@@ -115,7 +116,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://youtube.com/@amanchoo123">
                                     <img src="amanchoo.jpg" alt="Amanchoo" style={{ width: '100%', borderRadius: '5px' }} />
@@ -124,7 +125,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://twitch.tv/marriednminecraft">
                                     <img src="mim.jpg" alt="Married In Minecraft" style={{ width: '100%', borderRadius: '5px' }} />
@@ -133,7 +134,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://twitch.tv/rockymender">
                                     <img src="rocky.jpg" alt="RockyMender" style={{ width: '100%', borderRadius: '5px' }} />
@@ -142,7 +143,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://twitch.tv/holymist6249">
                                     <img src="holymist.jpg" alt="HolyMist" style={{ width: '100%', borderRadius: '5px' }} />
@@ -151,7 +152,7 @@ function App() {
                             </md-card-content>
                         </md-outlined-card>
 
-                        <md-outlined-card style={{  margin: '0.5em' }}>
+                        <md-outlined-card style={{ margin: '0.5em' }}>
                             <md-card-content>
                                 <a href="https://twitter.com/therealsillyman">
                                     <img src="silly.jpg" alt="Silly" style={{ width: '100%', borderRadius: '5px' }} />
@@ -165,14 +166,14 @@ function App() {
                     <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundImage: 'url("majs.png")', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
                         <img src="s1logo.png" alt="Majestic" style={{ width: '50vw' }} /><br></br>
                         <Button appearance="primary" onClick={() => window.open('https://drive.usercontent.google.com/download?id=1LIxNJVkE6x7FCBAJHTKxb7Bq4IjC3fKi&export=download&authuser=0')}>
-                            <md-icon slot="icon" style={{ marginRight:'0.25em' }}>download</md-icon>
+                            <md-icon slot="icon" style={{ marginRight: '0.25em' }}>download</md-icon>
                             Download
-                            </Button>
+                        </Button>
                     </md-card-content>
                 </md-elevated-card>
             </div>
             <div id="members-tab" role="tabpanel" aria-labelledby="members" style={{ display: 'none' }}>
-                <div style={{ textAlign:'center', }}>
+                <div style={{ textAlign: 'center', }}>
                     <h1>Under Construction</h1>
                     <p>Silly hasn't finished this part yet, that lazy bum.</p>
                 </div>
@@ -182,10 +183,29 @@ function App() {
             </div>
             <div id="downloads-tab" role="tabpanel" aria-labelledby="downloads" style={{ display: 'none' }}>
                 <md-elevated-card>
+                    <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundImage: 'url("spawn.png")', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
+                        <img src="S2.png" alt="Season 2 logo" style={{ width: '50vw' }} /><br></br>
+                        <a href="https://github.com/barxilly/DivergenceSMP/releases/download/s2/Divergence.Season.Two.mcworld" download>
+                            <Button appearance="primary" style={{ marginRight: '1em' }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2.2em" viewBox="0,0,256,256" style={{ marginRight: '0.25em' }}>
+                                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: "normal" }}><g transform="scale(5.12,5.12)"><path d="M4,4h20v20h-20zM26,4h20v20h-20zM4,26h20v20h-20zM26,26h20v20h-20z"></path></g></g>
+                                </svg>
+                                Download (Bedrock)
+                            </Button>
+                        </a>
+                        <a href="https://github.com/barxilly/DivergenceSMP/releases/download/s2/Divergence.Season.Two.Java.zip" download>
+                            <Button appearance="primary">
+                                <FaJava style={{ marginRight: '0.25em', fontSize: '2.2em' }} />
+                                Download (Java)
+                            </Button>
+                        </a>
+                    </md-card-content>
+                </md-elevated-card>
+                <md-elevated-card>
                     <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundImage: 'url("majs.png")', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
                         <img src="s1logo.png" alt="Majestic" style={{ width: '50vw' }} /><br></br>
                         <Button appearance="primary" onClick={() => window.open('https://drive.usercontent.google.com/download?id=1LIxNJVkE6x7FCBAJHTKxb7Bq4IjC3fKi&export=download&authuser=0')}>
-                            <md-icon slot="icon" style={{ marginRight:'0.25em' }}>download</md-icon>
+                            <md-icon slot="icon" style={{ marginRight: '0.25em' }}>download</md-icon>
                             Download
                         </Button>
                     </md-card-content>
@@ -194,13 +214,13 @@ function App() {
                     <md-card-content style={{ alignItems: 'center', color: '#fff', textAlign: 'center', backgroundSize: 'fill', borderRadius: '10px', backgroundPosition: 'center', padding: '1em' }}>
                         <img src="app.png" alt="App Logo" style={{ width: '50vw' }} /><br></br>
                         <Button appearance="primary" onClick={() => window.open('/downloads/Divergence.msix')}>
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.25em" viewBox="0,0,256,256" style={{marginRight:'0.25em'}}>
-<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode:"normal"}}><g transform="scale(5.12,5.12)"><path d="M4,4h20v20h-20zM26,4h20v20h-20zM4,26h20v20h-20zM26,26h20v20h-20z"></path></g></g>
-</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.25em" viewBox="0,0,256,256" style={{ marginRight: '0.25em' }}>
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: "normal" }}><g transform="scale(5.12,5.12)"><path d="M4,4h20v20h-20zM26,4h20v20h-20zM4,26h20v20h-20zM26,26h20v20h-20z"></path></g></g>
+                            </svg>
                             Download
                         </Button>
                     </md-card-content>
-                    </md-elevated-card>
+                </md-elevated-card>
             </div>
         </div>
     );
