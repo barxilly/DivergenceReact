@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import reactLogo from "/SteveFace.png";
+import reactLogo from "/img/SteveFace.png";
 import "./App.css";
 import { Button, Card, Title } from "mcb-ui";
 import "@mantine/core/styles.css";
@@ -30,7 +30,7 @@ function App() {
         <Center>
           <Stack>
             <Image
-              src="SeasonThree.png"
+              src="/img/SeasonThree.png"
               alt="React Logo"
               style={{ width: 400 }}
             />
@@ -60,7 +60,7 @@ function App() {
       </Card>
       <Card
         style={{
-          background: "url(https://divergence.live/majs.png)",
+          background: "url(/img/Majs.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -204,7 +204,7 @@ function App() {
         {MemCard(
           "Kat",
           "Da boss.",
-          "KatFace.png",
+          "/img/KatFace.png",
           <>
             <FaYoutube
               className="sb sb-yt"
@@ -237,7 +237,7 @@ function App() {
         {MemCard(
           "DigginTruths",
           "Da biatch.",
-          "DigginsFace.png",
+          "/img/DigginsFace.png",
           <>
             <FaYoutube
               className="sb sb-yt"
@@ -406,7 +406,7 @@ function App() {
     <Stack style={{ height: "90vh" }} gap={0}>
       <Card
         style={{
-          background: "url(Majs.png)",
+          background: "url(/img/Majs.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -414,7 +414,7 @@ function App() {
         <Center>
           <Stack>
             <Image
-              src="SeasonOne.png"
+              src="/img/SeasonOne.png"
               alt="React Logo"
               style={{ width: 400 }}
             />
@@ -438,7 +438,7 @@ function App() {
       </Card>
       <Card
         style={{
-          background: "url(Spawn.png)",
+          background: "url(/img/Spawn.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -446,7 +446,7 @@ function App() {
         <Center>
           <Stack>
             <Image
-              src="SeasonTwo.png"
+              src="/img/SeasonTwo.png"
               alt="React Logo"
               style={{ width: 400 }}
             />
@@ -502,7 +502,11 @@ function App() {
     <MantineProvider>
       <Stack id="mainstack" gap={0}>
         <Center h="10vh" id="logobar">
-          <Image src="Divergence.png" alt="React Logo" style={{ width: 400 }} />
+          <Image
+            src="/img/Divergence.png"
+            alt="React Logo"
+            style={{ width: 400 }}
+          />
         </Center>
         <Flex id="buttonbar">
           <Button

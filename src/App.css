@@ -8,7 +8,7 @@ body {
 }
 
 #mainstack {
-  background: url(Kats.png) !important;
+  background: url(/img/Kats.png) !important;
   background-size: cover !important;
   background-position: center !important;
 }
