@@ -1,0 +1,43 @@
+body {
+  background-color: var(--mcb-background) !important;
+}
+
+#logobar {
+  background-color: var(--mcb-secondary-dark) !important;
+  border-bottom: 2px solid var(--bezel-color-invert) !important;
+}
+
+#mainstack {
+  background: url(Kats.png) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+#content {
+  backdrop-filter: blur(5px) !important;
+}
+
+.sb {
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.sb-yt:hover {
+  color: #dd0000 !important;
+}
+
+.sb-tw:hover {
+  color: #cf1df2 !important;
+}
+
+.sb-x:hover {
+  color: #30aef7 !important;
+}
+
+.sb-bs:hover {
+  color: #1083fe !important;
+}
+
+.sb-dc:hover {
+  color: #7289da !important;
+}
