@@ -10,3 +10,8 @@ fs.writeFileSync(file, cname, {
 });
 
 console.log(`Created ${file} with content ${cname}`);
+
+const notFound = path.join(__dirname, "404.html");
+const notFoundDist = path.join(dist, "404.html");
+
+fs.copyFileSync(notFound, notFoundDist);

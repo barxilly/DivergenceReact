@@ -22,6 +22,14 @@ body {
   backdrop-filter: blur(5px) !important;
 }
 
+a {
+  color: var(--mcb-primary) !important;
+}
+
+a:hover {
+  color: var(--mcb-primary-dark) !important;
+}
+
 .sb {
   cursor: pointer !important;
   user-select: none !important;

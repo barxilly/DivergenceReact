@@ -96,9 +96,9 @@ function App() {
               style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}
               level={5}
             >
-              Divergence is a Minecraft SMP based in the Bedrock Edition of the
-              game. We are a group of 10 or so friends who get in the server to
-              try and make the best content we can.
+              Divergence is a Minecraft Survival Multiplayer server based in the
+              Bedrock Edition of the game. We are a group of 10 or so friends
+              who get in the server to try and make the best content we can.
             </Title>
             <Title
               style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}
@@ -485,11 +485,126 @@ function App() {
       </Card>
     </Stack>
   );
+  const initdate = "2023-03-01";
+  const date = new Date();
+  const diff = date.getTime() - new Date(initdate).getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const years = Math.floor(days / 365);
+  const months = Math.floor((days % 365) / 30);
+
+  const About = () => (
+    <Stack gap={0}>
+      <Card>
+        <Title level={1} center>
+          About
+        </Title>
+        <Title level={5} center>
+          Divergence is a Minecraft SMP based in the Bedrock Edition of the
+          game. We are a group of 10 or so friends who get in the server to try
+          and make the best content we can.
+        </Title>
+      </Card>
+      <Card>
+        <Title level={3} center>
+          We have been running for
+        </Title>
+        <Title level={1} center>
+          {days}
+        </Title>
+        <Title level={3} center>
+          days.
+        </Title>{" "}
+        <Title level={4} center>
+          That's about {years} years and {months} months.
+        </Title>
+      </Card>
+      <Card>
+        <Title level={2} center>
+          A Brief History
+        </Title>
+        <Title level={5} center>
+          Divergence started in 2023 with 9 members: Kat, DigginTruths,
+          Maj_Madden, BadRabbit, Silly, Amanchoo, Buster Sharp, SugarSkull289,
+          and Nota. Some are still in the server, some have left, and some have
+          joined.
+        </Title>
+        &nbsp;
+        <Title level={5} center>
+          The server started with a simple message in Kat.Beanie's, now quite
+          defunct, Discord server where she said to say the word "Penguin" if
+          you wanted to join. I mispelt the word, so technically I shouldn't be
+          here.
+        </Title>
+        &nbsp;
+        <Title level={5} center>
+          We are currently on our third season. We run new seasons about once a
+          year, usually starting in March.
+        </Title>
+      </Card>
+      <Card>
+        <Title level={2} center>
+          Why?
+        </Title>
+        <Title level={5} center>
+          Simply, we do it for fun, and to make content. We are not a business,
+          we are not a charity, we are not a cult. We are just a group of
+          friends who like to play Minecraft.
+        </Title>
+      </Card>
+      <Card>
+        <Title level={2} center>
+          How?
+        </Title>
+        <Title level={5} center>
+          We run our server on a Minecraft 10-player Realm, which is the maximum
+          amount of players allowed (feel free to vote for more players&nbsp;
+          <a href="https://feedback.minecraft.net/hc/en-us/community/posts/360076254631-Realm-Player-Cap-Raised-Teir-100">
+            here
+          </a>
+          ). We are 99% vanilla with a few addons mostly for quality of life:
+          Actions & Stuff, an addon that improves the animations and models in
+          the game; Tree Capacator, an addon that allows you to chop down a tree
+          by breaking one block; and a death counter below players' gamertags
+          for complete and utter shaming.
+        </Title>
+      </Card>
+      <Card>
+        <Title level={2} center>
+          Membership
+        </Title>
+        <Title level={5} center>
+          There are only 2 ways to be added to Divergence. You can be personally
+          referred by a current member, as people like HolyMist and JewelFireoak
+          have been. Or you can apply to join, which is the easiest option for
+          newcomers.
+        </Title>
+      </Card>
+    </Stack>
+  );
+
+  const Error = () => (
+    <Stack h="90vh" gap={0}>
+      <Card>
+        <Center>
+          <Image
+            src="https://cdn.discordapp.com/emojis/1271865717909885081.webp?size=512&name=crayolakat"
+            w={200}
+          />
+        </Center>
+        <Title level={2} center>
+          Error 404
+        </Title>
+        <Title level={5} center>
+          Page not found.
+        </Title>
+      </Card>
+    </Stack>
+  );
 
   window.onload = () => {
     if (window.location.toString().includes("?")) {
       const tab = window.location.toString().split("?")[1];
-      if (tab === "downloads" || tab === "members" || tab === "join") {
+      if (tab !== "home") {
         setSelectedTab(tab);
       } else {
         setSelectedTab("home");
@@ -518,6 +633,17 @@ function App() {
             font={selectedTab === "home" ? "Minecraft Ten" : "Minecraft Seven"}
           >
             Home
+          </Button>
+          <Button
+            color={selectedTab === "about" ? "primary" : "secondary"}
+            textColor={selectedTab === "about" ? "primary" : "secondary"}
+            style={{
+              width: "33.33vw",
+            }}
+            onClick={() => selTab("about")}
+            font={selectedTab === "about" ? "Minecraft Ten" : "Minecraft Seven"}
+          >
+            About
           </Button>
           <Button
             color={selectedTab === "members" ? "primary" : "secondary"}
@@ -564,8 +690,10 @@ function App() {
             <Apply />
           ) : selectedTab === "downloads" ? (
             <Downloads />
+          ) : selectedTab === "about" ? (
+            <About />
           ) : (
-            <Center h="80vh">Error</Center>
+            <Error />
           )}
         </Stack>
       </Stack>
