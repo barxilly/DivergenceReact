@@ -88,13 +88,14 @@ function App() {
           <Stack>
             <Title
               style={{ paddingLeft: "0.3em", paddingRight: "0.5em" }}
-              level={3}
+              level={1}
+              center
             >
               Welcome to Divergence!
             </Title>
             <Title
               style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}
-              level={5}
+              level={4}
             >
               Divergence is a Minecraft Survival Multiplayer server based in the
               Bedrock Edition of the game. We are a group of 10 or so friends
@@ -102,7 +103,7 @@ function App() {
             </Title>
             <Title
               style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}
-              level={5}
+              level={4}
             >
               We are currently on our third season, we run new seasons just
               about once a year. And we also run mini-seasons like our Hardcore
@@ -110,7 +111,7 @@ function App() {
             </Title>
             <Title
               style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}
-              level={5}
+              level={4}
             >
               To stay in touch with us, you can join our Discord server or
               follow us on Bluesky!
@@ -141,6 +142,44 @@ function App() {
           </Stack>
         </Center>
       </Card>
+      <Card
+        style={{
+          background: "#e98720",
+        }}
+      >
+        <Center>
+          <Stack>
+            <Center>
+              <Image
+                src="/img/trevor.png"
+                style={{
+                  width: "70vw",
+                  maxWidth: "20em",
+                }}
+              />
+            </Center>
+            <Title level={6} center>
+              Divergence is raising money for the Trevor Project, a charity that
+              provides crisis intervention and suicide prevention for LGBT+
+              adolescents.
+            </Title>
+            <Title level={6} center>
+              We're aiming to raise as much as possible for this amazing
+              charity, and if we hit $150, we also get to force Silly to make
+              content.
+            </Title>
+            <Button
+              color="#f7573c"
+              textColor="primary"
+              font="Minecraft Ten"
+              style={{ width: "100%" }}
+              onClick={() => window.open("https://fundraiser.silly.sbs")}
+            >
+              Donate Today
+            </Button>
+          </Stack>
+        </Center>
+      </Card>
     </Stack>
   );
 
@@ -149,9 +188,15 @@ function App() {
     desc: string,
     icon: string,
     socials: ReactNode,
-    joined?: string
+    joined?: string,
+    prospective?: boolean
   ) => (
-    <Card style={{ position: "relative" }}>
+    <Card
+      style={{
+        position: "relative",
+        backgroundColor: prospective ? "#422755" : "var(--mcb-secondary-dark)",
+      }}
+    >
       <Flex>
         <Image
           src={icon}
@@ -164,7 +209,12 @@ function App() {
         />
         <Stack pl={10} gap={5}>
           <Title level={3}>{name}</Title>
-          <Title level={5}>{desc}</Title>
+          <Flex>
+            <Title level={5}>{desc}</Title>
+            <Title style={{ fontSize: "0.6em", marginTop: "0.5em" }} level={6}>
+              &nbsp;{prospective ? "(Prospective)" : ""}
+            </Title>
+          </Flex>
           <Flex style={{ color: "#fff", userSelect: "none" }}>{socials}</Flex>
         </Stack>
 
@@ -385,6 +435,14 @@ function App() {
         )}
         {MemCard("JewelFireoak", "Da scary.", reactLogo, <></>, "II")}
         {MemCard("HearNoEvil", "Da Kevin.", reactLogo, <></>, "II")}
+        {MemCard(
+          "AgentCMinecraft",
+          "Da New Guy.",
+          reactLogo,
+          <></>,
+          "III",
+          true
+        )}
       </Stack>
     </Stack>
   );
