@@ -22,6 +22,18 @@ body {
   backdrop-filter: blur(5px) !important;
 }
 
+#footer {
+  background-color: var(--mcb-background) !important;
+  border-top: 2px solid var(--bezel-color-invert) !important;
+}
+
+@media (max-width: 400px) {
+  .mcb-button {
+    font-size: 0.6rem !important;
+  }
+
+}
+
 a {
   color: var(--mcb-primary) !important;
 }

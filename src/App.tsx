@@ -25,14 +25,14 @@ function App() {
   }
 
   const Home = () => (
-    <Stack h="120vh" gap={10}>
+    <Stack style={{ height: "fit-content" }} gap={10}>
       <Card>
         <Center>
           <Stack>
             <Image
               src="/img/SeasonThree.png"
               alt="React Logo"
-              style={{ width: 400 }}
+              style={{ width: "100%", maxWidth: "40em" }}
             />
             <Center>
               {/*<Button
@@ -416,7 +416,7 @@ function App() {
             <Image
               src="/img/SeasonOne.png"
               alt="React Logo"
-              style={{ width: 400 }}
+              style={{ width: "100%", maxWidth: "40em" }}
             />
             <Center>
               <Button
@@ -448,7 +448,7 @@ function App() {
             <Image
               src="/img/SeasonTwo.png"
               alt="React Logo"
-              style={{ width: 400 }}
+              style={{ width: "100%", maxWidth: "40em" }}
             />
             <Center>
               <Flex w="90%">
@@ -619,13 +619,13 @@ function App() {
           <Image
             src="/img/Divergence.png"
             alt="React Logo"
-            style={{ width: 400 }}
+            style={{ height: "7vh", width: "auto" }}
           />
         </Center>
-        <Flex id="buttonbar">
+        <Flex id="buttonbar" style={{ width: "100vw" }}>
           <Button
             style={{
-              width: "33.33vw",
+              width: "100%",
             }}
             color={selectedTab === "home" ? "primary" : "secondary"}
             textColor={selectedTab === "home" ? "primary" : "secondary"}
@@ -638,7 +638,7 @@ function App() {
             color={selectedTab === "about" ? "primary" : "secondary"}
             textColor={selectedTab === "about" ? "primary" : "secondary"}
             style={{
-              width: "33.33vw",
+              width: "100%",
             }}
             onClick={() => selTab("about")}
             font={selectedTab === "about" ? "Minecraft Ten" : "Minecraft Seven"}
@@ -648,7 +648,7 @@ function App() {
           <Button
             color={selectedTab === "members" ? "primary" : "secondary"}
             textColor={selectedTab === "members" ? "primary" : "secondary"}
-            style={{ width: "33.33vw" }}
+            style={{ width: "100%" }}
             onClick={() => selTab("members")}
             font={
               selectedTab === "members" ? "Minecraft Ten" : "Minecraft Seven"
@@ -660,7 +660,7 @@ function App() {
             color={selectedTab === "join" ? "primary" : "secondary"}
             textColor={selectedTab === "join" ? "primary" : "secondary"}
             style={{
-              width: "33.33vw",
+              width: "100%",
             }}
             onClick={() => selTab("join")}
             font={selectedTab === "join" ? "Minecraft Ten" : "Minecraft Seven"}
@@ -671,7 +671,7 @@ function App() {
             color={selectedTab === "downloads" ? "primary" : "secondary"}
             textColor={selectedTab === "downloads" ? "primary" : "secondary"}
             style={{
-              width: "33.33vw",
+              width: "100%",
             }}
             onClick={() => selTab("downloads")}
             font={
@@ -695,6 +695,30 @@ function App() {
           ) : (
             <Error />
           )}
+        </Stack>
+        <Stack id="footer" gap={0}>
+          <Card>
+            <Center>
+              <Stack gap="0">
+                <Title level={4} center>
+                  (c) 2023-25 Divergence SMP
+                </Title>
+                <Title level={4} center>
+                  Website by&nbsp;
+                  <a href="https://bsky.app/profile/silly.sbs">Silly</a>. Check
+                  out the&nbsp;
+                  <a href="https://github.com/barxilly/divergencereact">
+                    Source Code
+                  </a>
+                  .
+                </Title>
+                <Title level={6} center>
+                  Divergence is not affiliated with Mojang Studios, Microsoft or
+                  Minecraft.
+                </Title>
+              </Stack>
+            </Center>
+          </Card>
         </Stack>
       </Stack>
     </MantineProvider>
