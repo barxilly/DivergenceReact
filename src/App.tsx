@@ -21,7 +21,7 @@ function App() {
 
   function selTab(tab: string) {
     setSelectedTab(tab);
-    window.history.pushState({}, "", `/${tab === "home" ? "" : tab}`);
+    window.history.pushState({}, "", `/${tab === "home" ? "" : "?" + tab}`);
   }
 
   const Home = () => (
@@ -487,14 +487,13 @@ function App() {
   );
 
   window.onload = () => {
-    if (window.location.pathname === "/members") {
-      selTab("members");
-    } else if (window.location.pathname === "/join") {
-      selTab("join");
-    } else if (window.location.pathname === "/downloads") {
-      selTab("downloads");
-    } else {
-      selTab("home");
+    if (window.location.toString().includes("?")) {
+      const tab = window.location.toString().split("?")[1];
+      if (tab === "downloads" || tab === "members" || tab === "join") {
+        setSelectedTab(tab);
+      } else {
+        setSelectedTab("home");
+      }
     }
   };
 

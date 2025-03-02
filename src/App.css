@@ -2,6 +2,11 @@ body {
   background-color: var(--mcb-background) !important;
 }
 
+.mcb-title,
+.mcb-button {
+  font-weight: 300 !important;
+}
+
 #logobar {
   background-color: var(--mcb-secondary-dark) !important;
   border-bottom: 2px solid var(--bezel-color-invert) !important;
