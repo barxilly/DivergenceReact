@@ -14,7 +14,7 @@ import {
   Tooltip,
 } from "@mantine/core";
 import { FaDiscord, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa";
-import { FaBluesky } from "react-icons/fa6";
+import { FaBluesky, FaUpRightFromSquare } from "react-icons/fa6";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("home");
@@ -25,40 +25,42 @@ function App() {
   }
 
   const Home = () => (
-    <Stack style={{ height: "fit-content" }} gap={10}>
-      <Card>
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+      <Card
+        style={{
+          background: "url(/img/Spawn3.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <Center>
           <Stack>
             <Image
               src="/img/SeasonThree.png"
               alt="React Logo"
-              style={{ width: "100%", maxWidth: "40em" }}
+              style={{
+                width: "80%",
+                maxWidth: "30em",
+                height: "auto",
+                alignSelf: "center",
+              }}
             />
             <Center>
-              {/*<Button
-                style={{ width: "50%" }}
+              <Button
+                style={{ width: "80%" }}
                 color="primary"
                 textColor="primary"
                 font="Minecraft Ten"
                 onClick={() => window.open("https://www.youtube.com")}
               >
-                Watch Now!&nbsp;&nbsp;
+                Watch Episode 1 Now!&nbsp;&nbsp;
                 <FaUpRightFromSquare />
-              </Button>*/}
-              <Button
-                style={{ width: "80%" }}
-                color="secondary"
-                textColor="secondary"
-                font="Minecraft Ten"
-                disabled
-              >
-                Coming Very Soon!
               </Button>
             </Center>
           </Stack>
         </Center>
       </Card>
-      <Card
+      {/*<Card
         style={{
           background: "url(/img/Majs.png)",
           backgroundSize: "cover",
@@ -82,7 +84,7 @@ function App() {
           </Button>
         </Center>
         <Space h={40} />
-      </Card>
+      </Card>*/}
       <Card>
         <Center>
           <Stack>
@@ -241,7 +243,7 @@ function App() {
   );
 
   const Members = () => (
-    <Stack gap={0}>
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
       <Card>
         <Title level={2} center>
           Members
@@ -461,7 +463,7 @@ function App() {
   );
 
   const Downloads = () => (
-    <Stack style={{ height: "90vh" }} gap={0}>
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
       <Card
         style={{
           background: "url(/img/Majs.png)",
@@ -551,7 +553,7 @@ function App() {
   const months = Math.floor((days % 365) / 30);
 
   const About = () => (
-    <Stack gap={0}>
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
       <Card>
         <Title level={1} center>
           About
@@ -635,6 +637,72 @@ function App() {
           referred by a current member, as people like HolyMist and JewelFireoak
           have been. Or you can apply to join, which is the easiest option for
           newcomers.
+        </Title>
+      </Card>
+    </Stack>
+  );
+
+  const Contact = () => (
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+      <Card>
+        <Title level={2} center>
+          Contact
+        </Title>
+        <Title level={5} center>
+          If you need to contact us, you can do so through our Discord server or
+          by emailing Silly at&nbsp;
+          <a href="mailto:sillyfromdivergence@gmail.com">
+            sillyfromdivergence@gmail.com
+          </a>
+        </Title>
+        <Space h={20} />
+        <Center>
+          <Button
+            style={{ width: "50%" }}
+            color="#5764f2"
+            textColor="primary"
+            font="Minecraft Ten"
+            onClick={() => window.open("https://discord.gg/4C7Q3H8")}
+          >
+            Join Our Discord
+          </Button>
+        </Center>
+      </Card>
+    </Stack>
+  );
+
+  const GDPR = () => (
+    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+      <Card>
+        <Title level={2} center>
+          GDPR
+        </Title>
+        <Title level={5} center>
+          On standard use of this website, we do not collect any personal data.
+          We do not use cookies, we do not track you, we do not store your IP.
+          <br />
+          <br />
+          If you fill out the application form, you will be asked for your email
+          address, gamertag, discord username, and other personal details. This
+          data is stored by Typeform and is made accessible to Divergence
+          members, and is used to contact you about your application. This data
+          is not shared with any third parties.
+          <br />
+          <br />
+          Your data will be stored for as long as you are in the running to join
+          the server, and will be deleted if you are not accepted. You may
+          request removal of your data at any time by contacting Silly, as per
+          the Data Protection Act 2018, the UK's implementation of the GDPR.
+          <br />
+          <br />
+          We take the security of your data seriously and implement appropriate
+          technical and organizational measures to protect it. For more details
+          on how Typeform handles your data, please refer to their privacy
+          policy.
+          <br />
+          <br />
+          You have the right to access, rectify, or delete your data at any
+          time. To exercise these rights, please contact Silly.
         </Title>
       </Card>
     </Stack>
@@ -750,6 +818,10 @@ function App() {
             <Downloads />
           ) : selectedTab === "about" ? (
             <About />
+          ) : selectedTab === "contact" ? (
+            <Contact />
+          ) : selectedTab === "gdpr" ? (
+            <GDPR />
           ) : (
             <Error />
           )}
@@ -773,6 +845,11 @@ function App() {
                 <Title level={6} center>
                   Divergence is not affiliated with Mojang Studios, Microsoft or
                   Minecraft.
+                </Title>
+                <Title level={6} style={{ fontSize: "0.8em" }} center>
+                  <a onClick={() => setSelectedTab("contact")}>Contact</a>
+                  &nbsp;|&nbsp;
+                  <a onClick={() => setSelectedTab("gdpr")}>GDPR</a>
                 </Title>
               </Stack>
             </Center>

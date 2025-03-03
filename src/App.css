@@ -5,6 +5,7 @@ body {
 .mcb-title,
 .mcb-button {
   font-weight: 300 !important;
+  user-select: none;
 }
 
 #logobar {
@@ -20,6 +21,7 @@ body {
 
 #content {
   backdrop-filter: blur(5px) !important;
+  user-select: none;
 }
 
 #footer {
@@ -36,6 +38,9 @@ body {
 
 a {
   color: var(--mcb-primary) !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+  user-select: none !important;
 }
 
 a:hover {
