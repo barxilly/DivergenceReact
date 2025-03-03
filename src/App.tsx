@@ -51,7 +51,7 @@ function App() {
                 color="primary"
                 textColor="primary"
                 font="Minecraft Ten"
-                onClick={() => window.open("https://www.youtube.com")}
+                onClick={() => window.open("https://youtube.com/playlist?list=PL35kOUeIk-oHjqXK-iaAhQUi0nhkXx0CK&si=TySjrKRRIBNWTe_U")}
               >
                 Watch Episode 1 Now!&nbsp;&nbsp;
                 <FaUpRightFromSquare />
