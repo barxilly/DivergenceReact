@@ -13,7 +13,7 @@
     "@mantine/core": "^7.17.1",
     "@mantine/hooks": "^7.17.1",
     "classnames": "^2.5.1",
-    "mcb-ui": "^1.0.26-proto",
+    "mcb-ui": "^1.0.37-proto",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -51,7 +51,11 @@ function App() {
                 color="primary"
                 textColor="primary"
                 font="Minecraft Ten"
-                onClick={() => window.open("https://youtube.com/playlist?list=PL35kOUeIk-oHjqXK-iaAhQUi0nhkXx0CK&si=TySjrKRRIBNWTe_U")}
+                onClick={() =>
+                  window.open(
+                    "https://youtube.com/playlist?list=PL35kOUeIk-oHjqXK-iaAhQUi0nhkXx0CK&si=TySjrKRRIBNWTe_U"
+                  )
+                }
               >
                 Watch Episode 1 Now!&nbsp;&nbsp;
                 <FaUpRightFromSquare />
@@ -252,6 +256,35 @@ function App() {
           Meet the members of Divergence SMP!
         </Title>
       </Card>
+      {/*<Graph
+        options={{
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        }}
+        data={{
+          labels: ["I", "II", "III"],
+          datasets: [
+            {
+              label: "Members",
+              data: [5, 4, 1],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        }}
+      />*/}
       <Stack gap={0}>
         {MemCard(
           "Kat",
@@ -748,10 +781,15 @@ function App() {
             style={{ height: "7vh", width: "auto" }}
           />
         </Center>
-        <Flex id="buttonbar" style={{ width: "100vw" }}>
+        <Flex
+          id="buttonbar"
+          style={{ width: "100vw", background: "var(--mcb-secondary-dark)" }}
+        >
           <Button
             style={{
               width: "100%",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
             }}
             color={selectedTab === "home" ? "primary" : "secondary"}
             textColor={selectedTab === "home" ? "primary" : "secondary"}
@@ -765,6 +803,8 @@ function App() {
             textColor={selectedTab === "about" ? "primary" : "secondary"}
             style={{
               width: "100%",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
             }}
             onClick={() => selTab("about")}
             font={selectedTab === "about" ? "Minecraft Ten" : "Minecraft Seven"}
@@ -774,7 +814,11 @@ function App() {
           <Button
             color={selectedTab === "members" ? "primary" : "secondary"}
             textColor={selectedTab === "members" ? "primary" : "secondary"}
-            style={{ width: "100%" }}
+            style={{
+              width: "100%",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
+            }}
             onClick={() => selTab("members")}
             font={
               selectedTab === "members" ? "Minecraft Ten" : "Minecraft Seven"
@@ -787,6 +831,8 @@ function App() {
             textColor={selectedTab === "join" ? "primary" : "secondary"}
             style={{
               width: "100%",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
             }}
             onClick={() => selTab("join")}
             font={selectedTab === "join" ? "Minecraft Ten" : "Minecraft Seven"}
@@ -798,6 +844,8 @@ function App() {
             textColor={selectedTab === "downloads" ? "primary" : "secondary"}
             style={{
               width: "100%",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
             }}
             onClick={() => selTab("downloads")}
             font={
@@ -831,7 +879,11 @@ function App() {
             <Center>
               <Stack gap="0">
                 <Title level={4} center>
-                  (c) 2023-25 Divergence SMP
+                  (c) 2023-
+                  {new Date().getFullYear() === 2023
+                    ? ""
+                    : new Date().getFullYear().toString().slice(2)}
+                  &nbsp;Divergence SMP
                 </Title>
                 <Title level={4} center>
                   Website by&nbsp;
