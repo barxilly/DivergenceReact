@@ -349,7 +349,7 @@ function App() {
         {MemCard(
           "Amanchoo",
           "Da wedstone.",
-          reactLogo,
+          "/img/AmanchooFace.png",
           <>
             <FaYoutube
               className="sb sb-yt"
@@ -364,7 +364,7 @@ function App() {
         {MemCard(
           "Maj_Madden",
           "Da disposable.",
-          reactLogo,
+          "/img/MajFace.png",
           <>
             <FaYoutube
               className="sb sb-yt"
@@ -407,7 +407,7 @@ function App() {
         {MemCard(
           "BadRabbit",
           "Da wabbit.",
-          reactLogo,
+          "/img/BadRabbitFace.png ",
           <>
             <FaTwitch
               className="sb sb-tw"
@@ -426,7 +426,7 @@ function App() {
         {MemCard(
           "Silly",
           "Da agent d'chaos.",
-          reactLogo,
+          "/img/SillyFace.png",
           <>
             <FaTwitch
               className="sb sb-tw"
@@ -468,7 +468,13 @@ function App() {
           </>,
           "II"
         )}
-        {MemCard("JewelFireoak", "Da scary.", reactLogo, <></>, "II")}
+        {MemCard(
+          "JewelFireoak",
+          "Da scary.",
+          "/img/JewelFace.png",
+          <></>,
+          "II"
+        )}
         {MemCard("HearNoEvil", "Da Kevin.", reactLogo, <></>, "II")}
         {MemCard(
           "AgentCMinecraft",
