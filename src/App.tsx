@@ -128,7 +128,7 @@ function App() {
                 textColor="primary"
                 font="Minecraft Ten"
                 style={{ width: "60%" }}
-                onClick={() => window.open("https://discord.gg/4C7Q3H8")}
+                onClick={() => window.open("https://discord.gg/pRY9sNMWQX")}
               >
                 Join Discord
               </Button>
