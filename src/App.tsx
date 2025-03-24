@@ -476,14 +476,14 @@ function App() {
           "II"
         )}
         {MemCard("HearNoEvil", "Da Kevin.", reactLogo, <></>, "II")}
-        {MemCard(
+        {/*MemCard(
           "AgentCMinecraft",
           "Da New Guy.",
           reactLogo,
           <></>,
           "III",
           true
-        )}
+        )*/}
       </Stack>
     </Stack>
   );
