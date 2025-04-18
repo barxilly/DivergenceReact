@@ -148,7 +148,7 @@ function App() {
           </Stack>
         </Center>
       </Card>
-      <Card
+      {/*<Card
         style={{
           background: "#e98720",
         }}
@@ -185,7 +185,7 @@ function App() {
             </Button>
           </Stack>
         </Center>
-      </Card>
+      </Card>*/}
     </Stack>
   );
 
@@ -675,7 +675,7 @@ function App() {
           There are only 2 ways to be added to Divergence. You can be personally
           referred by a current member, as people like HolyMist and JewelFireoak
           have been. Or you can apply to join, which is the easiest option for
-          newcomers.
+          newcomers, by clicking apply in the top bar.
         </Title>
       </Card>
     </Stack>
