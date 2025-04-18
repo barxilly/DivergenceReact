@@ -491,7 +491,7 @@ function App() {
   const Apply = () => (
     <>
       <iframe
-        src="https://form.typeform.com/to/ZZvhDA9i?typeform-embed-id=42519322876785104&amp;typeform-embed=embed-widget&amp;typeform-source=divergence.live&amp;typeform-medium=snippet&amp;typeform-medium-version=next&amp;embed-hide-headers=true&amp;embed-opacity=100&amp;typeform-embed-handles-redirect=1&amp;typeform-embed-no-heading=true"
+        src="https://tally.so/embed/wvWVdQ?alignLeft=1&hideTitle=1&dynamicHeight=0"
         data-testid="iframe"
         style={{ border: "0px", height: "90vh", transform: "translateZ(0px)" }}
         allow="microphone; camera"
@@ -723,9 +723,11 @@ function App() {
           <br />
           If you fill out the application form, you will be asked for your email
           address, gamertag, discord username, and other personal details. This
-          data is stored by Typeform and is made accessible to Divergence
-          members, and is used to contact you about your application. This data
-          is not shared with any third parties.
+          data is stored by Tally and is made accessible to Divergence
+          members, and is used to contact you about your application. When you
+          submit the form, the country you are in will also be recorded, this
+          helps us with things like time zones, etc. This data is not shared
+          with any third parties.
           <br />
           <br />
           Your data will be stored for as long as you are in the running to join
@@ -736,7 +738,7 @@ function App() {
           <br />
           We take the security of your data seriously and implement appropriate
           technical and organizational measures to protect it. For more details
-          on how Typeform handles your data, please refer to their privacy
+          on how Tally handles your data, please refer to their privacy
           policy.
           <br />
           <br />
