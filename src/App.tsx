@@ -64,31 +64,7 @@ function App() {
           </Stack>
         </Center>
       </Card>
-      {/*<Card
-        style={{
-          background: "url(/img/Majs.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <Space h={40} />
-        <Center>
-          <Button
-            style={{ width: "20em" }}
-            color="secondary"
-            textColor="secondary"
-            font="Minecraft Seven"
-            onClick={() =>
-              window.open(
-                "https://drive.usercontent.google.com/download?id=1LIxNJVkE6x7FCBAJHTKxb7Bq4IjC3fKi&export=download"
-              )
-            }
-          >
-            Download Season 1 Map
-          </Button>
-        </Center>
-        <Space h={40} />
-      </Card>*/}
+      {}
       <Card>
         <Center>
           <Stack>
@@ -475,7 +451,7 @@ function App() {
           <></>,
           "II"
         )}
-        {MemCard("HearNoEvil", "Da Kevin.", reactLogo, <></>, "II")}
+        {MemCard("HearNoEvil", "Da Kevin.", "/img/HearNoFace.png", <></>, "II")}
         {/*MemCard(
           "AgentCMinecraft",
           "Da New Guy.",
