@@ -26,18 +26,23 @@ body {
   outline: none !important;
 }
 
+.video-card:hover {
+  filter: brightness(0.9) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
 #logobar {
   background-color: var(--mcb-secondary-dark) !important;
 }
 
 #mainstack {
-  background: url(/img/Kats.png) !important;
+  background: url(/img/Kats.webp) !important;
   background-size: cover !important;
   background-position: center !important;
 }
 
 #content {
-  backdrop-filter: blur(5px) !important;
+  backdrop-filter: blur(10px) !important;
   user-select: none;
 }
 

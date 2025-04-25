@@ -7,6 +7,7 @@ import "mcb-ui/dist/main.css";
 import {
   Center,
   Flex,
+  Grid,
   Image,
   MantineProvider,
   Space,
@@ -18,6 +19,15 @@ import { FaBluesky, FaUpRightFromSquare } from "react-icons/fa6";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("home");
+  const [content, setContent] = useState(
+    <Center>
+      <Card>
+        <Title level={4} center>
+          Loading...
+        </Title>
+      </Card>
+    </Center>
+  );
 
   function selTab(tab: string) {
     setSelectedTab(tab);
@@ -26,9 +36,9 @@ function App() {
 
   const Home = () => (
     <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
-      <Card
+      {/*<Card
         style={{
-          background: "url(/img/Spawn3.png)",
+          background: "url(/img/Spawn3.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -64,7 +74,49 @@ function App() {
           </Stack>
         </Center>
       </Card>
-      {}
+       */}{" "}
+      <Card
+        style={{
+          background: "#e98720",
+        }}
+      >
+        <Center>
+          <Stack>
+            <Center>
+              <Image
+                src="/img/trevor.png"
+                style={{
+                  width: "70vw",
+                  maxWidth: "20em",
+                }}
+              />
+            </Center>
+            <Title level={6} center>
+              Divergence is raising money for the Trevor Project, a charity that
+              provides crisis intervention and suicide prevention for LGBT+
+              adolescents.
+            </Title>
+            <Title level={6} center>
+              We're aiming to raise as much as possible for this amazing
+              charity, and if we hit $150, we also get to force Silly to make
+              content.
+            </Title>
+            <Button
+              color="#f7573c"
+              textColor="primary"
+              font="Minecraft Ten"
+              style={{ width: "100%" }}
+              onClick={() =>
+                window.open(
+                  "https://give.thetrevorproject.org/give/f6042134/#!/donation/checkout"
+                )
+              }
+            >
+              Donate Today
+            </Button>
+          </Stack>
+        </Center>
+      </Card>
       <Card>
         <Center>
           <Stack>
@@ -124,45 +176,34 @@ function App() {
           </Stack>
         </Center>
       </Card>
-      {/*<Card
-        style={{
-          background: "#e98720",
-        }}
-      >
-        <Center>
-          <Stack>
-            <Center>
-              <Image
-                src="/img/trevor.png"
-                style={{
-                  width: "70vw",
-                  maxWidth: "20em",
-                }}
-              />
-            </Center>
-            <Title level={6} center>
-              Divergence is raising money for the Trevor Project, a charity that
-              provides crisis intervention and suicide prevention for LGBT+
-              adolescents.
-            </Title>
-            <Title level={6} center>
-              We're aiming to raise as much as possible for this amazing
-              charity, and if we hit $150, we also get to force Silly to make
-              content.
-            </Title>
-            <Button
-              color="#f7573c"
-              textColor="primary"
-              font="Minecraft Ten"
-              style={{ width: "100%" }}
-              onClick={() => window.open("https://fundraiser.silly.sbs")}
-            >
-              Donate Today
-            </Button>
-          </Stack>
-        </Center>
-      </Card>*/}
     </Stack>
+  );
+
+  const Content = () => (
+    <Grid>
+      <Grid.Col span="auto">
+        <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+          <Center>
+            <Card style={{ width: "100%", backgroundColor: "#d00" }}>
+              <Center>
+                <Title level={2}>LATEST VIDEOS</Title>
+              </Center>
+            </Card>
+          </Center>
+          {content}
+        </Stack>
+      </Grid.Col>
+      {/*<Grid.Col span="auto"><Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+          <Center>
+            <Card style={{ width: "100%", backgroundColor: "#1083fe " }}>
+              <Center>
+                <Title level={2}>LATEST SKEETS</Title>
+              </Center>
+            </Card>
+          </Center>
+          {content}
+        </Stack></Grid.Col>*/}
+    </Grid>
   );
 
   const MemCard = (
@@ -176,7 +217,8 @@ function App() {
     <Card
       style={{
         position: "relative",
-        backgroundColor: prospective ? "#422755" : "var(--mcb-secondary-dark)",
+        backgroundColor: prospective ? "#422755" : "#eeeeee",
+        color: "#000 !important",
       }}
     >
       <Flex>
@@ -190,14 +232,18 @@ function App() {
           }}
         />
         <Stack pl={10} gap={5}>
-          <Title level={3}>{name}</Title>
+          <Title style={{ color: "#333" }} level={3}>
+            {name}
+          </Title>
           <Flex>
-            <Title level={5}>{desc}</Title>
+            <Title style={{ color: "#333" }} level={5}>
+              {desc}
+            </Title>
             <Title style={{ fontSize: "0.6em", marginTop: "0.5em" }} level={6}>
               &nbsp;{prospective ? "(Prospective)" : ""}
             </Title>
           </Flex>
-          <Flex style={{ color: "#fff", userSelect: "none" }}>{socials}</Flex>
+          <Flex style={{ color: "#333", userSelect: "none" }}>{socials}</Flex>
         </Stack>
 
         <Card
@@ -481,7 +527,7 @@ function App() {
     <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
       <Card
         style={{
-          background: "url(/img/Majs.png)",
+          background: "url(/img/Majs.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -513,7 +559,7 @@ function App() {
       </Card>
       <Card
         style={{
-          background: "url(/img/Spawn.png)",
+          background: "url(/img/Spawn.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -568,93 +614,339 @@ function App() {
   const months = Math.floor((days % 365) / 30);
 
   const About = () => (
-    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
-      <Card>
-        <Title level={1} center>
-          About
-        </Title>
-        <Title level={5} center>
-          Divergence is a Minecraft SMP based in the Bedrock Edition of the
-          game. We are a group of 10 or so friends who get in the server to try
-          and make the best content we can.
-        </Title>
-      </Card>
-      <Card>
-        <Title level={3} center>
-          We have been running for
-        </Title>
-        <Title level={1} center>
-          {days}
-        </Title>
-        <Title level={3} center>
-          days.
-        </Title>{" "}
-        <Title level={4} center>
-          That's about {years} years and {months} months.
-        </Title>
-      </Card>
-      <Card>
-        <Title level={2} center>
-          A Brief History
-        </Title>
-        <Title level={5} center>
-          Divergence started in 2023 with 9 members: Kat, DigginTruths,
-          Maj_Madden, BadRabbit, Silly, Amanchoo, Buster Sharp, SugarSkull289,
-          and Nota. Some are still in the server, some have left, and some have
-          joined.
-        </Title>
-        &nbsp;
-        <Title level={5} center>
-          The server started with a simple message in Kat.Beanie's, now quite
-          defunct, Discord server where she said to say the word "Penguin" if
-          you wanted to join. I mispelt the word, so technically I shouldn't be
-          here.
-        </Title>
-        &nbsp;
-        <Title level={5} center>
-          We are currently on our third season. We run new seasons about once a
-          year, usually starting in March.
-        </Title>
-      </Card>
-      <Card>
-        <Title level={2} center>
-          Why?
-        </Title>
-        <Title level={5} center>
-          Simply, we do it for fun, and to make content. We are not a business,
-          we are not a charity, we are not a cult. We are just a group of
-          friends who like to play Minecraft.
-        </Title>
-      </Card>
-      <Card>
-        <Title level={2} center>
-          How?
-        </Title>
-        <Title level={5} center>
-          We run our server on a Minecraft 10-player Realm, which is the maximum
-          amount of players allowed (feel free to vote for more players&nbsp;
-          <a href="https://feedback.minecraft.net/hc/en-us/community/posts/360076254631-Realm-Player-Cap-Raised-Teir-100">
-            here
-          </a>
-          ). We are 99% vanilla with a few addons mostly for quality of life:
-          Actions & Stuff, an addon that improves the animations and models in
-          the game; Tree Capacator, an addon that allows you to chop down a tree
-          by breaking one block; and a death counter below players' gamertags
-          for complete and utter shaming.
-        </Title>
-      </Card>
-      <Card>
-        <Title level={2} center>
-          Membership
-        </Title>
-        <Title level={5} center>
-          There are only 2 ways to be added to Divergence. You can be personally
-          referred by a current member, as people like HolyMist and JewelFireoak
-          have been. Or you can apply to join, which is the easiest option for
-          newcomers, by clicking apply in the top bar.
-        </Title>
-      </Card>
-    </Stack>
+    <Grid>
+      <Grid.Col span="auto">
+        <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+          <Card>
+            <Title level={1} center>
+              About
+            </Title>
+            <Title level={5} center>
+              Divergence is a Minecraft SMP based in the Bedrock Edition of the
+              game. We are a group of 10 or so friends who get in the server to
+              try and make the best content we can.
+            </Title>
+          </Card>
+          <Card>
+            <Title level={3} center>
+              We have been running for
+            </Title>
+            <Title level={1} center>
+              {days}
+            </Title>
+            <Title level={3} center>
+              days.
+            </Title>{" "}
+            <Title level={4} center>
+              That's about {years} years and {months} months.
+            </Title>
+          </Card>
+          <Card>
+            <Title level={2} center>
+              A Brief History
+            </Title>
+            <Title level={5} center>
+              Divergence started in 2023 with 9 members: Kat, DigginTruths,
+              Maj_Madden, BadRabbit, Silly, Amanchoo, Buster Sharp,
+              SugarSkull289, and Nota. Some are still in the server, some have
+              left, and some have joined.
+            </Title>
+            &nbsp;
+            <Title level={5} center>
+              The server started with a simple message in Kat.Beanie's, now
+              quite defunct, Discord server where she said to say the word
+              "Penguin" if you wanted to join. I mispelt the word, so
+              technically I shouldn't be here.
+            </Title>
+            &nbsp;
+            <Title level={5} center>
+              We are currently on our third season. We run new seasons about
+              once a year, usually starting in March.
+            </Title>
+          </Card>
+          <Card>
+            <Title level={2} center>
+              Why?
+            </Title>
+            <Title level={5} center>
+              Simply, we do it for fun, and to make content. We are not a
+              business, we are not a charity, we are not a cult. We are just a
+              group of friends who like to play Minecraft.
+            </Title>
+          </Card>
+          <Card>
+            <Title level={2} center>
+              How?
+            </Title>
+            <Title level={5} center>
+              We run our server on a Minecraft 10-player Realm, which is the
+              maximum amount of players allowed (feel free to vote for more
+              players&nbsp;
+              <a href="https://feedback.minecraft.net/hc/en-us/community/posts/360076254631-Realm-Player-Cap-Raised-Teir-100">
+                here
+              </a>
+              ). We are 99% vanilla with a few addons mostly for quality of
+              life: Actions & Stuff, an addon that improves the animations and
+              models in the game; Tree Capacator, an addon that allows you to
+              chop down a tree by breaking one block; and a death counter below
+              players' gamertags for complete and utter shaming.
+            </Title>
+          </Card>
+          <Card>
+            <Title level={2} center>
+              Membership
+            </Title>
+            <Title level={5} center>
+              There are only 2 ways to be added to Divergence. You can be
+              personally referred by a current member, as people like HolyMist
+              and JewelFireoak have been. Or you can apply to join, which is the
+              easiest option for newcomers, by clicking apply in the top bar.
+            </Title>
+          </Card>
+        </Stack>
+      </Grid.Col>
+      <Grid.Col span="auto">
+        <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+          <Card>
+            <Title level={1} center>
+              Current Members
+            </Title>
+            <Stack gap={0}>
+              {MemCard(
+                "Kat",
+                "Da boss.",
+                "/img/KatFace.png",
+                <>
+                  <FaYoutube
+                    className="sb sb-yt"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.youtube.com/@kat.beanie")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/kat_beanie")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitter
+                    className="sb sb-x"
+                    size={20}
+                    onClick={() => window.open("https://www.x.com/autymamma")}
+                  />
+                  &nbsp; &nbsp;
+                  <FaBluesky
+                    className="sb sb-bs"
+                    size={20}
+                    onClick={() =>
+                      window.open(
+                        "https://bsky.app/profile/katbeanie.bsky.social"
+                      )
+                    }
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "DigginTruths",
+                "Da biatch.",
+                "/img/DigginsFace.png",
+                <>
+                  <FaYoutube
+                    className="sb sb-yt"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.youtube.com/@diggintruths")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/diggintruths")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitter
+                    className="sb sb-x"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.x.com/diggintruths")
+                    }
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "Amanchoo",
+                "Da wedstone.",
+                "/img/AmanchooFace.png",
+                <>
+                  <FaYoutube
+                    className="sb sb-yt"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.youtube.com/@amanchoo123")
+                    }
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "Maj_Madden",
+                "Da disposable.",
+                "/img/MajFace.png",
+                <>
+                  <FaYoutube
+                    className="sb sb-yt"
+                    size={20}
+                    onClick={() =>
+                      window.open(
+                        "https://www.youtube.com/@married-in-minecraft"
+                      )
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/marriednminecraft")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitter
+                    className="sb sb-x"
+                    size={20}
+                    onClick={() => window.open("https://www.x.com/maj_madden")}
+                  />
+                  &nbsp; &nbsp;
+                  <FaBluesky
+                    className="sb sb-bs"
+                    size={20}
+                    onClick={() =>
+                      window.open(
+                        "https://bsky.app/profile/mim.divergence.live"
+                      )
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaDiscord
+                    className="sb sb-dc"
+                    size={20}
+                    onClick={() => window.open("https://discord.gg/AdpZqR3hs7")}
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "BadRabbit",
+                "Da wabbit.",
+                "/img/BadRabbitFace.png ",
+                <>
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/badrabbit1971")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaTwitter
+                    className="sb sb-x"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.x.com/badrabbit1971")
+                    }
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "Silly",
+                "Da agent d'chaos.",
+                "/img/SillyFace.png",
+                <>
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/sillycubed")
+                    }
+                  />
+                  &nbsp; &nbsp;
+                  <FaBluesky
+                    className="sb sb-bs"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://bsky.app/profile/silly.sbs")
+                    }
+                  />
+                </>,
+                "I"
+              )}
+              {MemCard(
+                "HolyMist",
+                "Da fishing.",
+                reactLogo,
+                <>
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/holymist6249")
+                    }
+                  />
+                </>,
+                "II"
+              )}
+              {MemCard(
+                "RockyMender",
+                "Da endermen-killer.",
+                reactLogo,
+                <>
+                  <FaTwitch
+                    className="sb sb-tw"
+                    size={20}
+                    onClick={() =>
+                      window.open("https://www.twitch.tv/rockymender")
+                    }
+                  />
+                </>,
+                "II"
+              )}
+              {MemCard(
+                "JewelFireoak",
+                "Da scary.",
+                "/img/JewelFace.png",
+                <></>,
+                "II"
+              )}
+              {MemCard(
+                "HearNoEvil",
+                "Da Kevin.",
+                "/img/HearNoFace.png",
+                <></>,
+                "II"
+              )}
+              {/*MemCard(
+          "AgentCMinecraft",
+          "Da New Guy.",
+          reactLogo,
+          <></>,
+          "III",
+          true
+        )*/}
+            </Stack>
+          </Card>
+        </Stack>
+      </Grid.Col>
+    </Grid>
   );
 
   const Contact = () => (
@@ -699,11 +991,11 @@ function App() {
           <br />
           If you fill out the application form, you will be asked for your email
           address, gamertag, discord username, and other personal details. This
-          data is stored by Tally and is made accessible to Divergence
-          members, and is used to contact you about your application. When you
-          submit the form, the country you are in will also be recorded, this
-          helps us with things like time zones, etc. This data is not shared
-          with any third parties.
+          data is stored by Tally and is made accessible to Divergence members,
+          and is used to contact you about your application. When you submit the
+          form, the country you are in will also be recorded, this helps us with
+          things like time zones, etc. This data is not shared with any third
+          parties.
           <br />
           <br />
           Your data will be stored for as long as you are in the running to join
@@ -714,8 +1006,7 @@ function App() {
           <br />
           We take the security of your data seriously and implement appropriate
           technical and organizational measures to protect it. For more details
-          on how Tally handles your data, please refer to their privacy
-          policy.
+          on how Tally handles your data, please refer to their privacy policy.
           <br />
           <br />
           You have the right to access, rectify, or delete your data at any
@@ -744,7 +1035,87 @@ function App() {
     </Stack>
   );
 
-  window.onload = () => {
+  const VideoCard = (
+    title: string,
+    desc: string,
+    author: string,
+    date: string,
+    link: string,
+    thumbnail: string
+  ) => (
+    <Center>
+      <Card
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          margin: "1em",
+          overflow: "hidden",
+          backgroundColor: "white",
+          width: "100%",
+          maxWidth: "100vw",
+          cursor: "pointer",
+          WebkitTextDecorationSkip: desc,
+        }}
+        className="video-card"
+        onClick={() => window.open(link)}
+      >
+        {/* Thumbnail Section */}
+        <div
+          style={{
+            maxWidth: "40vw",
+            cursor: "pointer",
+            aspectRatio: "16/9",
+          }}
+          onClick={() => window.open(link)}
+        >
+          <Image
+            src={thumbnail}
+            alt={title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              aspectRatio: "16/9",
+            }}
+          />
+        </div>
+
+        {/* Metadata Section */}
+        <Stack
+          style={{
+            flex: "1",
+            padding: "1em",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <Title
+              level={3}
+              style={{
+                margin: "0 0 0.5em 0",
+                cursor: "pointer",
+                fontWeight: "bold",
+                color: "#000",
+              }}
+            >
+              {title}
+            </Title>
+            <Title
+              level={6}
+              style={{
+                color: "#606060",
+                margin: "0 0 0.5em 0",
+              }}
+            >
+              {author} <FaYoutube style={{ paddingTop: "0.25em" }} /> • {date}
+            </Title>
+          </div>
+        </Stack>
+      </Card>
+    </Center>
+  );
+
+  window.onload = async () => {
     if (window.location.toString().includes("?")) {
       const tab = window.location.toString().split("?")[1];
       if (tab !== "home") {
@@ -753,7 +1124,54 @@ function App() {
         setSelectedTab("home");
       }
     }
+
+    const url = `https://api.divergence.live/content`;
+    try {
+      const _test = await fetch(url);
+      console.log((await _test.json())[0].title);
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(JSON.stringify(data));
+          let videos = [];
+          for (let i = 0; i < data.length; i++) {
+            const item = data[i];
+            const title = item.title;
+            const desc = item.desc;
+            const author = item.author;
+            const date = item.date;
+            const link = item.link;
+            const thumbnail = item.thumbnail;
+
+            const video = VideoCard(title, desc, author, date, link, thumbnail);
+            videos.push(video);
+          }
+          console.log(videos);
+          setContent(<>{videos}</>);
+        });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setContent(
+        <Center>
+          <Card>
+            <Title level={4} center>
+              Error loading videos.
+            </Title>
+          </Card>
+        </Center>
+      );
+    }
   };
+
+  const _unused = (
+    <>
+      <FaUpRightFromSquare />
+      <Members />
+    </>
+  );
+
+  _unused;
 
   return (
     <MantineProvider>
@@ -796,19 +1214,19 @@ function App() {
             About
           </Button>
           <Button
-            color={selectedTab === "members" ? "primary" : "secondary"}
-            textColor={selectedTab === "members" ? "primary" : "secondary"}
+            color={selectedTab === "content" ? "primary" : "secondary"}
+            textColor={selectedTab === "content" ? "primary" : "secondary"}
             style={{
               width: "100%",
               paddingLeft: "0.5em",
               paddingRight: "0.5em",
             }}
-            onClick={() => selTab("members")}
+            onClick={() => selTab("content")}
             font={
-              selectedTab === "members" ? "Minecraft Ten" : "Minecraft Seven"
+              selectedTab === "content" ? "Minecraft Ten" : "Minecraft Seven"
             }
           >
-            Members
+            Content
           </Button>
           <Button
             color={selectedTab === "join" ? "primary" : "secondary"}
@@ -842,8 +1260,8 @@ function App() {
         <Stack id="content">
           {selectedTab === "home" ? (
             <Home />
-          ) : selectedTab === "members" ? (
-            <Members />
+          ) : selectedTab === "content" ? (
+            <Content />
           ) : selectedTab === "join" ? (
             <Apply />
           ) : selectedTab === "downloads" ? (
