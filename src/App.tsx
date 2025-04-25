@@ -1137,7 +1137,11 @@ function App() {
           let videos = [];
           for (let i = 0; i < data.length; i++) {
             const item = data[i];
-            const title = item.title;
+            let title = item.title;
+            const screenWidth = window.innerWidth;
+            if (title.length > 36 && screenWidth < 800) {
+              title = title.substring(0, 36) + "...";
+            }
             const desc = item.desc;
             const author = item.author;
             const date = item.date;
