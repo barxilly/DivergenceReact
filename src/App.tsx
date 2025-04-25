@@ -710,7 +710,7 @@ function App() {
           <Card>
             <Title level={1} center>
               Current Members
-            </Title>
+            </Title></Card>
             <Stack gap={0}>
               {MemCard(
                 "Kat",
@@ -943,7 +943,6 @@ function App() {
           true
         )*/}
             </Stack>
-          </Card>
         </Stack>
       </Grid.Col>
     </Grid>
