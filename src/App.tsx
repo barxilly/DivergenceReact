@@ -75,48 +75,6 @@ function App() {
         </Center>
       </Card>
        */}{" "}
-      <Card
-        style={{
-          background: "#e98720",
-        }}
-      >
-        <Center>
-          <Stack>
-            <Center>
-              <Image
-                src="/img/trevor.png"
-                style={{
-                  width: "70vw",
-                  maxWidth: "20em",
-                }}
-              />
-            </Center>
-            <Title level={6} center>
-              Divergence is raising money for the Trevor Project, a charity that
-              provides crisis intervention and suicide prevention for LGBT+
-              adolescents.
-            </Title>
-            <Title level={6} center>
-              We're aiming to raise as much as possible for this amazing
-              charity, and if we hit $150, we also get to force Silly to make
-              content.
-            </Title>
-            <Button
-              color="#f7573c"
-              textColor="primary"
-              font="Minecraft Ten"
-              style={{ width: "100%" }}
-              onClick={() =>
-                window.open(
-                  "https://give.thetrevorproject.org/give/f6042134/#!/donation/checkout"
-                )
-              }
-            >
-              Donate Today
-            </Button>
-          </Stack>
-        </Center>
-      </Card>
       <Card>
         <Center>
           <Stack>
@@ -176,6 +134,48 @@ function App() {
           </Stack>
         </Center>
       </Card>
+      <Card
+        style={{
+          background: "#e98720",
+        }}
+      >
+        <Center>
+          <Stack>
+            <Center>
+              <Image
+                src="/img/trevor.png"
+                style={{
+                  width: "70vw",
+                  maxWidth: "19em",
+                }}
+              />
+            </Center>
+            <Title level={4} center>
+              Divergence is raising money for the Trevor Project, a charity that
+              provides crisis intervention and suicide prevention for LGBT+
+              adolescents.
+            </Title>
+            <Title level={4} center>
+              We're aiming to raise as much as possible for this amazing
+              charity, and if we hit $150, we also get to force Silly to make
+              content.
+            </Title>
+            <Button
+              color="#f7573c"
+              textColor="primary"
+              font="Minecraft Ten"
+              style={{ width: "100%" }}
+              onClick={() =>
+                window.open(
+                  "https://give.thetrevorproject.org/give/f6042134/#!/donation/checkout"
+                )
+              }
+            >
+              Donate Today
+            </Button>
+          </Stack>
+        </Center>
+      </Card>
     </Stack>
   );
 
@@ -217,7 +217,7 @@ function App() {
     <Card
       style={{
         position: "relative",
-        backgroundColor: prospective ? "#422755" : "#eeeeee",
+        backgroundColor: prospective ? "#A66CBB" : "#eeeeee",
         color: "#000 !important",
       }}
     >
@@ -239,7 +239,7 @@ function App() {
             <Title style={{ color: "#333" }} level={5}>
               {desc}
             </Title>
-            <Title style={{ fontSize: "0.6em", marginTop: "0.5em" }} level={6}>
+            <Title style={{ color: "#554466" }}  level={6}>
               &nbsp;{prospective ? "(Prospective)" : ""}
             </Title>
           </Flex>
@@ -268,247 +268,7 @@ function App() {
     </Card>
   );
 
-  const Members = () => (
-    <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
-      <Card>
-        <Title level={2} center>
-          Members
-        </Title>
-        <Title level={5} center>
-          Meet the members of Divergence SMP!
-        </Title>
-      </Card>
-      {/*<Graph
-        options={{
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        }}
-        data={{
-          labels: ["I", "II", "III"],
-          datasets: [
-            {
-              label: "Members",
-              data: [5, 4, 1],
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-              ],
-              borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        }}
-      />*/}
-      <Stack gap={0}>
-        {MemCard(
-          "Kat",
-          "Da boss.",
-          "/img/KatFace.png",
-          <>
-            <FaYoutube
-              className="sb sb-yt"
-              size={20}
-              onClick={() => window.open("https://www.youtube.com/@kat.beanie")}
-            />
-            &nbsp; &nbsp;
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/kat_beanie")}
-            />
-            &nbsp; &nbsp;
-            <FaTwitter
-              className="sb sb-x"
-              size={20}
-              onClick={() => window.open("https://www.x.com/autymamma")}
-            />
-            &nbsp; &nbsp;
-            <FaBluesky
-              className="sb sb-bs"
-              size={20}
-              onClick={() =>
-                window.open("https://bsky.app/profile/katbeanie.bsky.social")
-              }
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "DigginTruths",
-          "Da biatch.",
-          "/img/DigginsFace.png",
-          <>
-            <FaYoutube
-              className="sb sb-yt"
-              size={20}
-              onClick={() =>
-                window.open("https://www.youtube.com/@diggintruths")
-              }
-            />
-            &nbsp; &nbsp;
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/diggintruths")}
-            />
-            &nbsp; &nbsp;
-            <FaTwitter
-              className="sb sb-x"
-              size={20}
-              onClick={() => window.open("https://www.x.com/diggintruths")}
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "Amanchoo",
-          "Da wedstone.",
-          "/img/AmanchooFace.png",
-          <>
-            <FaYoutube
-              className="sb sb-yt"
-              size={20}
-              onClick={() =>
-                window.open("https://www.youtube.com/@amanchoo123")
-              }
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "Maj_Madden",
-          "Da disposable.",
-          "/img/MajFace.png",
-          <>
-            <FaYoutube
-              className="sb sb-yt"
-              size={20}
-              onClick={() =>
-                window.open("https://www.youtube.com/@married-in-minecraft")
-              }
-            />
-            &nbsp; &nbsp;
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() =>
-                window.open("https://www.twitch.tv/marriednminecraft")
-              }
-            />
-            &nbsp; &nbsp;
-            <FaTwitter
-              className="sb sb-x"
-              size={20}
-              onClick={() => window.open("https://www.x.com/maj_madden")}
-            />
-            &nbsp; &nbsp;
-            <FaBluesky
-              className="sb sb-bs"
-              size={20}
-              onClick={() =>
-                window.open("https://bsky.app/profile/mim.divergence.live")
-              }
-            />
-            &nbsp; &nbsp;
-            <FaDiscord
-              className="sb sb-dc"
-              size={20}
-              onClick={() => window.open("https://discord.gg/AdpZqR3hs7")}
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "BadRabbit",
-          "Da wabbit.",
-          "/img/BadRabbitFace.png ",
-          <>
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/badrabbit1971")}
-            />
-            &nbsp; &nbsp;
-            <FaTwitter
-              className="sb sb-x"
-              size={20}
-              onClick={() => window.open("https://www.x.com/badrabbit1971")}
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "Silly",
-          "Da agent d'chaos.",
-          "/img/SillyFace.png",
-          <>
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/sillycubed")}
-            />
-            &nbsp; &nbsp;
-            <FaBluesky
-              className="sb sb-bs"
-              size={20}
-              onClick={() => window.open("https://bsky.app/profile/silly.sbs")}
-            />
-          </>,
-          "I"
-        )}
-        {MemCard(
-          "HolyMist",
-          "Da fishing.",
-          reactLogo,
-          <>
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/holymist6249")}
-            />
-          </>,
-          "II"
-        )}
-        {MemCard(
-          "RockyMender",
-          "Da endermen-killer.",
-          reactLogo,
-          <>
-            <FaTwitch
-              className="sb sb-tw"
-              size={20}
-              onClick={() => window.open("https://www.twitch.tv/rockymender")}
-            />
-          </>,
-          "II"
-        )}
-        {MemCard(
-          "JewelFireoak",
-          "Da scary.",
-          "/img/JewelFace.png",
-          <></>,
-          "II"
-        )}
-        {MemCard("HearNoEvil", "Da Kevin.", "/img/HearNoFace.png", <></>, "II")}
-        {/*MemCard(
-          "AgentCMinecraft",
-          "Da New Guy.",
-          reactLogo,
-          <></>,
-          "III",
-          true
-        )*/}
-      </Stack>
-    </Stack>
-  );
+  const Members = () => <></>;
 
   const Apply = () => (
     <>
@@ -648,8 +408,8 @@ function App() {
             <Title level={5} center>
               Divergence started in 2023 with 9 members: Kat, DigginTruths,
               Maj_Madden, BadRabbit, Silly, Amanchoo, Buster Sharp,
-              SugarSkull289, and Nota. Some are still in the server, some have
-              left, and some have joined.
+              SugarSkull289, and Nota. Some still in the server, some have left,
+              and some more have joined.
             </Title>
             &nbsp;
             <Title level={5} center>
@@ -710,239 +470,248 @@ function App() {
           <Card>
             <Title level={1} center>
               Current Members
-            </Title></Card>
-            <Stack gap={0}>
-              {MemCard(
-                "Kat",
-                "Da boss.",
-                "/img/KatFace.png",
-                <>
-                  <FaYoutube
-                    className="sb sb-yt"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.youtube.com/@kat.beanie")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/kat_beanie")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitter
-                    className="sb sb-x"
-                    size={20}
-                    onClick={() => window.open("https://www.x.com/autymamma")}
-                  />
-                  &nbsp; &nbsp;
-                  <FaBluesky
-                    className="sb sb-bs"
-                    size={20}
-                    onClick={() =>
-                      window.open(
-                        "https://bsky.app/profile/katbeanie.bsky.social"
-                      )
-                    }
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "DigginTruths",
-                "Da biatch.",
-                "/img/DigginsFace.png",
-                <>
-                  <FaYoutube
-                    className="sb sb-yt"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.youtube.com/@diggintruths")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/diggintruths")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitter
-                    className="sb sb-x"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.x.com/diggintruths")
-                    }
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "Amanchoo",
-                "Da wedstone.",
-                "/img/AmanchooFace.png",
-                <>
-                  <FaYoutube
-                    className="sb sb-yt"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.youtube.com/@amanchoo123")
-                    }
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "Maj_Madden",
-                "Da disposable.",
-                "/img/MajFace.png",
-                <>
-                  <FaYoutube
-                    className="sb sb-yt"
-                    size={20}
-                    onClick={() =>
-                      window.open(
-                        "https://www.youtube.com/@married-in-minecraft"
-                      )
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/marriednminecraft")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitter
-                    className="sb sb-x"
-                    size={20}
-                    onClick={() => window.open("https://www.x.com/maj_madden")}
-                  />
-                  &nbsp; &nbsp;
-                  <FaBluesky
-                    className="sb sb-bs"
-                    size={20}
-                    onClick={() =>
-                      window.open(
-                        "https://bsky.app/profile/mim.divergence.live"
-                      )
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaDiscord
-                    className="sb sb-dc"
-                    size={20}
-                    onClick={() => window.open("https://discord.gg/AdpZqR3hs7")}
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "BadRabbit",
-                "Da wabbit.",
-                "/img/BadRabbitFace.png ",
-                <>
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/badrabbit1971")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaTwitter
-                    className="sb sb-x"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.x.com/badrabbit1971")
-                    }
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "Silly",
-                "Da agent d'chaos.",
-                "/img/SillyFace.png",
-                <>
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/sillycubed")
-                    }
-                  />
-                  &nbsp; &nbsp;
-                  <FaBluesky
-                    className="sb sb-bs"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://bsky.app/profile/silly.sbs")
-                    }
-                  />
-                </>,
-                "I"
-              )}
-              {MemCard(
-                "HolyMist",
-                "Da fishing.",
-                reactLogo,
-                <>
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/holymist6249")
-                    }
-                  />
-                </>,
-                "II"
-              )}
-              {MemCard(
-                "RockyMender",
-                "Da endermen-killer.",
-                reactLogo,
-                <>
-                  <FaTwitch
-                    className="sb sb-tw"
-                    size={20}
-                    onClick={() =>
-                      window.open("https://www.twitch.tv/rockymender")
-                    }
-                  />
-                </>,
-                "II"
-              )}
-              {MemCard(
-                "JewelFireoak",
-                "Da scary.",
-                "/img/JewelFace.png",
-                <></>,
-                "II"
-              )}
-              {MemCard(
-                "HearNoEvil",
-                "Da Kevin.",
-                "/img/HearNoFace.png",
-                <></>,
-                "II"
-              )}
-              {/*MemCard(
-          "AgentCMinecraft",
-          "Da New Guy.",
-          reactLogo,
-          <></>,
-          "III",
-          true
-        )*/}
-            </Stack>
+            </Title>
+          </Card>
+          <Stack gap={0}>
+            {MemCard(
+              "Kat",
+              "Da boss.",
+              "/img/KatFace.png",
+              <>
+                <FaYoutube
+                  className="sb sb-yt"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.youtube.com/@kat.beanie")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/kat_beanie")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitter
+                  className="sb sb-x"
+                  size={20}
+                  onClick={() => window.open("https://www.x.com/autymamma")}
+                />
+                &nbsp; &nbsp;
+                <FaBluesky
+                  className="sb sb-bs"
+                  size={20}
+                  onClick={() =>
+                    window.open(
+                      "https://bsky.app/profile/katbeanie.bsky.social"
+                    )
+                  }
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "DigginTruths",
+              "Da biatch.",
+              "/img/DigginsFace.png",
+              <>
+                <FaYoutube
+                  className="sb sb-yt"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.youtube.com/@diggintruths")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/diggintruths")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitter
+                  className="sb sb-x"
+                  size={20}
+                  onClick={() => window.open("https://www.x.com/diggintruths")}
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "Amanchoo",
+              "Da wedstone.",
+              "/img/AmanchooFace.png",
+              <>
+                <FaYoutube
+                  className="sb sb-yt"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.youtube.com/@amanchoo123")
+                  }
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "Maj_Madden",
+              "Da disposable.",
+              "/img/MajFace.png",
+              <>
+                <FaYoutube
+                  className="sb sb-yt"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.youtube.com/@married-in-minecraft")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/marriednminecraft")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitter
+                  className="sb sb-x"
+                  size={20}
+                  onClick={() => window.open("https://www.x.com/maj_madden")}
+                />
+                &nbsp; &nbsp;
+                <FaBluesky
+                  className="sb sb-bs"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://bsky.app/profile/mim.divergence.live")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaDiscord
+                  className="sb sb-dc"
+                  size={20}
+                  onClick={() => window.open("https://discord.gg/AdpZqR3hs7")}
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "BadRabbit",
+              "Da wabbit.",
+              "/img/BadRabbitFace.png ",
+              <>
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/badrabbit1971")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaTwitter
+                  className="sb sb-x"
+                  size={20}
+                  onClick={() => window.open("https://www.x.com/badrabbit1971")}
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "Silly",
+              "Da agent d'chaos.",
+              "/img/SillyFace.png",
+              <>
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/sillycubed")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaBluesky
+                  className="sb sb-bs"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://bsky.app/profile/silly.sbs")
+                  }
+                />
+              </>,
+              "I"
+            )}
+            {MemCard(
+              "HolyMist",
+              "Da fishing.",
+              reactLogo,
+              <>
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/holymist6249")
+                  }
+                />
+              </>,
+              "II"
+            )}
+            {MemCard(
+              "RockyMender",
+              "Da endermen-killer.",
+              reactLogo,
+              <>
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/rockymender")
+                  }
+                />
+              </>,
+              "II"
+            )}
+            {MemCard(
+              "JewelFireoak",
+              "Da scary.",
+              "/img/JewelFace.png",
+              <></>,
+              "II"
+            )}
+            {MemCard(
+              "HearNoEvil",
+              "Da Kevin.",
+              "/img/HearNoFace.png",
+              <></>,
+              "II"
+            )}
+            {MemCard(
+              "GamerMonk",
+              "Da Monk Eh.",
+              "/img/MonkFace.webp",
+              <>
+                <FaTwitch
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://www.twitch.tv/gamermonk25")
+                  }
+                />
+                &nbsp; &nbsp;
+                <FaYoutube
+                  className="sb sb-tw"
+                  size={20}
+                  onClick={() =>
+                    window.open("https://youtube.com/@gamermonk25") 
+                  }
+                />
+              </>,
+              "III",
+              true
+            )}
+          </Stack>
         </Stack>
       </Grid.Col>
     </Grid>

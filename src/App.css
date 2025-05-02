@@ -1,5 +1,6 @@
 body {
   background-color: var(--mcb-background) !important;
+  overflow-x: hidden !important;
 }
 .mcb-button-border {
   position: absolute;
