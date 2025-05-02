@@ -885,6 +885,36 @@ function App() {
   );
 
   window.onload = async () => {
+    // Preload images
+    const preloadImages = () => {
+      const images = [
+        "/img/SteveFace.png",
+        "/img/SeasonThree.png",
+        "/img/trevor.png",
+        "/img/Majs.webp",
+        "/img/Spawn.webp",
+        "/img/SeasonOne.png",
+        "/img/SeasonTwo.png",
+        "/img/KatFace.png",
+        "/img/DigginsFace.png",
+        "/img/AmanchooFace.png",
+        "/img/MajFace.png",
+        "/img/BadRabbitFace.png",
+        "/img/SillyFace.png",
+        "/img/JewelFace.png",
+        "/img/HearNoFace.png",
+        "/img/MonkFace.webp",
+        "/img/Divergence.png",
+      ];
+  
+      images.forEach((src) => {
+        const img = document.createElement("img");
+        img.src = src;
+      });
+    };
+  
+    preloadImages();
+  
     if (window.location.toString().includes("?")) {
       const tab = window.location.toString().split("?")[1];
       if (tab !== "home") {
@@ -893,12 +923,12 @@ function App() {
         setSelectedTab("home");
       }
     }
-
+  
     const url = `https://api.divergence.live/content`;
     try {
       const _test = await fetch(url);
       console.log((await _test.json())[0].title);
-
+  
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -916,7 +946,9 @@ function App() {
             const date = item.date;
             const link = item.link;
             const thumbnail = item.thumbnail;
-
+            const img = document.createElement("img");
+            img.src = thumbnail;
+  
             const video = VideoCard(title, desc, author, date, link, thumbnail);
             videos.push(video);
           }
