@@ -78,6 +78,13 @@ a:hover {
   color: var(--mcb-primary-dark) !important;
 }
 
+.mcb-bezel {
+  box-shadow: inset 0 -2px 0 0 var(--bezel-color),
+    inset -2px 0 0 0 var(--bezel-color),
+    inset 0 2px 0 0 var(--bezel-color-invert),
+    inset 2px 0 0 0 var(--bezel-color-invert);
+}
+
 .sb {
   cursor: pointer !important;
   user-select: none !important;

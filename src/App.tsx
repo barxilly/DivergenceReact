@@ -152,13 +152,12 @@ function App() {
             </Center>
             <Title level={4} center>
               Divergence is raising money for the Trevor Project, a charity that
-              provides crisis intervention and suicide prevention for LGBT+
+              provides crisis intervention and suicide prevention for LGBTQ+
               adolescents.
             </Title>
             <Title level={4} center>
               We're aiming to raise as much as possible for this amazing
-              charity, and if we hit $150, we also get to force Silly to make
-              content.
+              charity, so anything helps!
             </Title>
             <Button
               color="#f7573c"
@@ -217,7 +216,7 @@ function App() {
     <Card
       style={{
         position: "relative",
-        backgroundColor: prospective ? "#A66CBB" : "#eeeeee",
+        backgroundColor: prospective ? "#A66CBB" : "#bb8800",
         color: "#000 !important",
       }}
     >
@@ -374,8 +373,8 @@ function App() {
   const months = Math.floor((days % 365) / 30);
 
   const About = () => (
-    <Grid>
-      <Grid.Col span="auto">
+    <Grid breakpoints={{ sm: "1000px", md: "1400px", lg: "1900px",xs: "1000px", xl: "2100px" }}>
+      <Grid.Col span={{ base: 12, md: 8, sm: 6 }}>
         <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
           <Card>
             <Title level={1} center>
@@ -465,7 +464,7 @@ function App() {
           </Card>
         </Stack>
       </Grid.Col>
-      <Grid.Col span="auto">
+      <Grid.Col span={{ base: 12, md: 4, sm: 6 }}>
         <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
           <Card>
             <Title level={1} center>
@@ -818,11 +817,12 @@ function App() {
           flexDirection: "row",
           margin: "1em",
           overflow: "hidden",
-          backgroundColor: "white",
+          backgroundColor: "#bb8800",
           width: "100%",
           maxWidth: "100vw",
           cursor: "pointer",
           WebkitTextDecorationSkip: desc,
+
         }}
         className="video-card"
         onClick={() => window.open(link)}
@@ -845,6 +845,7 @@ function App() {
               objectFit: "cover",
               aspectRatio: "16/9",
             }}
+            className="mcb-bezel"
           />
         </div>
 
@@ -863,7 +864,7 @@ function App() {
                 margin: "0 0 0.5em 0",
                 cursor: "pointer",
                 fontWeight: "bold",
-                color: "#000",
+                color: "#222",
               }}
             >
               {title}
@@ -871,7 +872,7 @@ function App() {
             <Title
               level={6}
               style={{
-                color: "#606060",
+                color: "#444",
                 margin: "0 0 0.5em 0",
               }}
             >
