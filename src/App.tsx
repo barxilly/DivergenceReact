@@ -916,7 +916,7 @@ function App() {
     preloadImages();
   
     if (window.location.toString().includes("?")) {
-      const tab = window.location.toString().split("?")[1];
+      const tab = window.location.toString().split("?")[1].split("&")[0];
       if (tab !== "home") {
         setSelectedTab(tab);
       } else {
