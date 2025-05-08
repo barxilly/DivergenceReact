@@ -686,30 +686,6 @@ function App() {
               <></>,
               "II"
             )}
-            {MemCard(
-              "GamerMonk",
-              "Da Monk Eh.",
-              "/img/MonkFace.webp",
-              <>
-                <FaTwitch
-                  className="sb sb-tw"
-                  size={20}
-                  onClick={() =>
-                    window.open("https://www.twitch.tv/gamermonk25")
-                  }
-                />
-                &nbsp; &nbsp;
-                <FaYoutube
-                  className="sb sb-tw"
-                  size={20}
-                  onClick={() =>
-                    window.open("https://youtube.com/@gamermonk25") 
-                  }
-                />
-              </>,
-              "III",
-              true
-            )}
           </Stack>
         </Stack>
       </Grid.Col>
@@ -903,7 +879,6 @@ function App() {
         "/img/SillyFace.png",
         "/img/JewelFace.png",
         "/img/HearNoFace.png",
-        "/img/MonkFace.webp",
         "/img/Divergence.png",
       ];
   
