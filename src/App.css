@@ -37,13 +37,13 @@ body {
 }
 
 #mainstack {
-  background: url(/img/Kats.webp) !important;
+  background: url(/img/Spawn3.webp) !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: top !important;
 }
 
 #content {
-  backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(0px) !important;
   user-select: none;
 }
 
