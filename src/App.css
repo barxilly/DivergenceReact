@@ -20,6 +20,18 @@ body {
   left: 0;
 }
 
+@keyframes borderpulse {
+  0% {
+    border-color: #ff0000ff;
+  }
+  50% {
+    border-color: #ff000033;
+  }
+  100% {
+    border-color: #ff0000ff;
+  }
+}
+
 .mcb-title,
 .mcb-button {
   font-weight: 300 !important;

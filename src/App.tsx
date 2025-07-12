@@ -28,6 +28,15 @@ function App() {
       </Card>
     </Center>
   );
+  const [twitchContent, setTwitchContent] = useState(
+    <Center>
+      <Card>
+        <Title level={4} center>
+          Loading...
+        </Title>
+      </Card>
+    </Center>
+  );
 
   function selTab(tab: string) {
     setSelectedTab(tab);
@@ -202,6 +211,18 @@ function App() {
           </Center>
           {content}
         </Stack></Grid.Col>*/}
+        <Grid.Col span="auto">
+          <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
+            <Center>
+              <Card style={{ width: "100%", backgroundColor: "#6441a5" }}>
+                <Center>
+                  <Title level={2}>TWITCH CHANNELS</Title>
+                </Center>
+              </Card>
+            </Center>
+            {twitchContent}
+          </Stack>
+          </Grid.Col>
     </Grid>
   );
 
@@ -216,8 +237,8 @@ function App() {
     <Card
       style={{
         position: "relative",
-        backgroundColor: prospective ? "#A66CBB" : "#bb8800",
-        color: "#000 !important",
+        backgroundColor: prospective ? "#554466" : "#076b14",
+        color: "#fff !important",
       }}
     >
       <Flex>
@@ -231,18 +252,18 @@ function App() {
           }}
         />
         <Stack pl={10} gap={5}>
-          <Title style={{ color: "#333" }} level={3}>
+          <Title style={{ color: "#fff" }} level={3}>
             {name}
           </Title>
           <Flex>
-            <Title style={{ color: "#333" }} level={5}>
+            <Title style={{ color: "#fff" }} level={5}>
               {desc}
             </Title>
-            <Title style={{ color: "#554466" }}  level={6}>
+            <Title style={{ color: "#A66CBB" }} level={6}>
               &nbsp;{prospective ? "(Prospective)" : ""}
             </Title>
           </Flex>
-          <Flex style={{ color: "#333", userSelect: "none" }}>{socials}</Flex>
+          <Flex style={{ color: "#fff", userSelect: "none" }}>{socials}</Flex>
         </Stack>
 
         <Card
@@ -250,7 +271,7 @@ function App() {
             position: "absolute",
             right: 0,
             top: 0,
-            backgroundColor: "#aaa",
+            backgroundColor: "#888",
             color: "#000",
             fontFamily: "Minecraft Seven",
             width: "2em",
@@ -373,7 +394,15 @@ function App() {
   const months = Math.floor((days % 365) / 30);
 
   const About = () => (
-    <Grid breakpoints={{ sm: "1000px", md: "1400px", lg: "1900px",xs: "1000px", xl: "2100px" }}>
+    <Grid
+      breakpoints={{
+        sm: "1000px",
+        md: "1400px",
+        lg: "1900px",
+        xs: "1000px",
+        xl: "2100px",
+      }}
+    >
       <Grid.Col span={{ base: 12, md: 8, sm: 6 }}>
         <Stack style={{ minHeight: "80vh", height: "fit-content" }} gap={0}>
           <Card>
@@ -778,39 +807,269 @@ function App() {
     </Stack>
   );
 
+  const TwitchCard = (
+    displayName: string,
+    username: string,
+    profilePicture: string,
+    followerCount: number,
+    isLive: boolean,
+    currentGame: string | null,
+    description: string,
+    streamTitle?: string
+  ) => {
+    const isMobile = window.innerWidth <= 768;
+    
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          margin: "0 16px 16px 16px",
+          padding: "16px",
+          cursor: "pointer",
+          backgroundColor: "#ffffffff",
+          borderRadius: "6px",
+          overflow: "hidden",
+          transition: "all 0.2s ease",
+          color: "#000",
+          border: "1px solid #ddd",
+        }}
+        onClick={() => window.open(`https://twitch.tv/${username}`)}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#ddddddff";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#ffffffff";
+        }}
+      >
+        {/* Profile Picture Section */}
+        <div
+          style={{
+            width: isMobile ? "120px" : "120px",
+            height: isMobile ? "120px" : "120px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            marginRight: isMobile ? "0" : "16px",
+            marginBottom: isMobile ? "12px" : "0",
+            alignSelf: isMobile ? "center" : "flex-start",
+            flexShrink: 0,
+            position: "relative",
+            border: isLive ? "3px solid #ff0000ff" : "3px solid #ccc",
+            animation: isLive ? "borderpulse 1.5s infinite" : "none",
+          }}
+        >
+          <Image
+            src={profilePicture}
+            alt={displayName}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          {isLive && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: "4px",
+                right: "4px",
+                backgroundColor: "#ff0000",
+                color: "#fff",
+                fontSize: "10px",
+                padding: "2px 6px",
+                borderRadius: "12px",
+                fontWeight: "bold",
+              }}
+            >
+              LIVE
+            </div>
+          )}
+        </div>
+
+        {/* Content Section */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            minWidth: 0,
+            paddingTop: "4px",
+          }}
+        >
+          {/* Display Name */}
+          <h3
+            style={{
+              margin: "0 0 8px 0",
+              fontSize: "18px",
+              fontWeight: 500,
+              lineHeight: "24px",
+              color: "#000",
+              fontFamily: "Roboto, Arial, sans-serif",
+            }}
+          >
+            {displayName}
+          </h3>
+
+          {/* Username */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "4px",
+              gap: "8px",
+            }}
+          >
+            <FaTwitch
+              style={{
+                color: "#9147ff",
+                fontSize: "16px",
+              }}
+            />
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              {username}
+            </span>
+          </div>
+
+          {/* Description or Stream Title */}
+          {(isLive && streamTitle) ? (
+            <p
+              style={{
+                margin: "0 0 8px 0",
+                fontSize: "14px",
+                color: "#666",
+                fontFamily: "Roboto, Arial, sans-serif",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                lineHeight: "20px",
+                fontStyle: "italic",
+              }}
+            >
+             Streaming Now: "{streamTitle}"
+            </p>
+          ) : description && (
+            <p
+              style={{
+                margin: "0 0 8px 0",
+                fontSize: "14px",
+                color: "#666",
+                fontFamily: "Roboto, Arial, sans-serif",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                lineHeight: "20px",
+              }}
+            >
+              {description}
+            </p>
+          )}
+
+          {/* Metadata row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              marginTop: "auto",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              {followerCount} followers
+            </span>
+            {(currentGame && isLive) && (
+              <>
+                <span
+                  style={{
+                    fontSize: "14px",
+                    color: "#888",
+                    fontFamily: "Roboto, Arial, sans-serif",
+                  }}
+                >
+                  •
+                </span>
+                <span
+                  style={{
+                    fontSize: "14px",
+                    color: "#888",
+                    fontFamily: "Roboto, Arial, sans-serif",
+                    fontWeight: 400,
+                  }}
+                >
+                  Playing {currentGame}
+                </span>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const VideoCard = (
     title: string,
-    desc: string,
     author: string,
     date: string,
     link: string,
-    thumbnail: string
-  ) => (
-    <Center>
-      <Card
+    thumbnail: string,
+    viewCount: string,
+    authorPfp: string
+  ) => {
+    const isMobile = window.innerWidth <= 768;
+    
+    return (
+      <div
         style={{
           display: "flex",
-          flexDirection: "row",
-          margin: "1em",
-          overflow: "hidden",
-          backgroundColor: "#bb8800",
-          width: "100%",
-          maxWidth: "100vw",
+          flexDirection: isMobile ? "column" : "row",
+          margin: "0 16px 16px 16px",
+          padding: "16px",
           cursor: "pointer",
-          WebkitTextDecorationSkip: desc,
-
+          backgroundColor: "#ffffffff",
+          borderRadius: "6px",
+          overflow: "hidden",
+          transition: "all 0.2s ease",
+          color: "#000",
+          border: "1px solid #ddd",
         }}
-        className="video-card"
         onClick={() => window.open(link)}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#ddddddff";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#ffffffff";
+        }}
       >
         {/* Thumbnail Section */}
         <div
           style={{
-            maxWidth: "40vw",
-            cursor: "pointer",
-            aspectRatio: "16/9",
+            width: isMobile ? "100%" : "320px",
+            height: isMobile ? "200px" : "180px",
+            borderRadius: "8px",
+            overflow: "hidden",
+            marginRight: isMobile ? "0" : "16px",
+            marginBottom: isMobile ? "12px" : "0",
+            flexShrink: 0,
+            position: "relative",
           }}
-          onClick={() => window.open(link)}
         >
           <Image
             src={thumbnail}
@@ -819,46 +1078,123 @@ function App() {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              aspectRatio: "16/9",
             }}
-            className="mcb-bezel"
           />
         </div>
 
-        {/* Metadata Section */}
-        <Stack
+        {/* Content Section */}
+        <div
           style={{
-            flex: "1",
-            padding: "1em",
-            justifyContent: "space-between",
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            minWidth: 0,
+            paddingTop: "4px",
           }}
         >
-          <div>
-            <Title
-              level={3}
+          {/* Title */}
+          <h3
+            style={{
+              margin: "0 0 8px 0",
+              fontSize: "18px",
+              fontWeight: 500,
+              lineHeight: "24px",
+              color: "#000",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              fontFamily: "Roboto, Arial, sans-serif",
+            }}
+          >
+            {title}
+          </h3>
+
+          {/* Channel info with PFP */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "4px",
+              gap: "8px",
+            }}
+          >
+            <div
               style={{
-                margin: "0 0 0.5em 0",
-                cursor: "pointer",
-                fontWeight: "bold",
-                color: "#222",
+                width: "24px",
+                height: "24px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                flexShrink: 0,
+                backgroundColor: "#333",
               }}
             >
-              {title}
-            </Title>
-            <Title
-              level={6}
+              <Image
+                src={authorPfp || `https://yt3.ggpht.com/a/default-user=s24-c-k-c0x00ffffff-no-rj`}
+                alt={`${author} profile`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            <span
               style={{
-                color: "#444",
-                margin: "0 0 0.5em 0",
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+                fontWeight: 400,
               }}
             >
-              {author} <FaYoutube style={{ paddingTop: "0.25em" }} /> • {date}
-            </Title>
+              {author}
+            </span>
           </div>
-        </Stack>
-      </Card>
-    </Center>
-  );
+
+          {/* Metadata row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              {viewCount} views
+            </span>
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+              }}
+            >
+              •
+            </span>
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#888",
+                fontFamily: "Roboto, Arial, sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              {date}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   window.onload = async () => {
     // Preload images
@@ -881,15 +1217,15 @@ function App() {
         "/img/HearNoFace.png",
         "/img/Divergence.png",
       ];
-  
+
       images.forEach((src) => {
         const img = document.createElement("img");
         img.src = src;
       });
     };
-  
+
     preloadImages();
-  
+
     if (window.location.toString().includes("?")) {
       const tab = window.location.toString().split("?")[1].split("&")[0];
       if (tab !== "home") {
@@ -898,12 +1234,13 @@ function App() {
         setSelectedTab("home");
       }
     }
-  
+
     const url = `https://api.divergence.live/content`;
+    const twitchUrl = `https://api.divergence.live/twitchinfo`;
     try {
       const _test = await fetch(url);
       console.log((await _test.json())[0].title);
-  
+
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -916,19 +1253,43 @@ function App() {
             if (title.length > 36 && screenWidth < 800) {
               title = title.substring(0, 36) + "...";
             }
-            const desc = item.desc;
             const author = item.author;
             const date = item.date;
             const link = item.link;
             const thumbnail = item.thumbnail;
+            const viewCount = item.viewCount;
+            const authorPfp = item.authorPfp;
             const img = document.createElement("img");
             img.src = thumbnail;
-  
-            const video = VideoCard(title, desc, author, date, link, thumbnail);
+
+            const video = VideoCard(title, author, date, link, thumbnail, viewCount, authorPfp);
             videos.push(video);
           }
           console.log(videos);
           setContent(<>{videos}</>);
+        });
+
+      fetch(twitchUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Twitch data:", JSON.stringify(data));
+          let twitchChannels = [];
+          for (let i = 0; i < data.length; i++) {
+            const channel = data[i];
+            const twitchCard = TwitchCard(
+              channel.displayName,
+              channel.username,
+              channel.profilePicture,
+              channel.followerCount,
+              channel.isLive,
+              channel.currentGame,
+              channel.description,
+              channel.streamTitle
+            );
+            twitchChannels.push(twitchCard);
+          }
+          console.log("Twitch channels:", twitchChannels);
+          setTwitchContent(<>{twitchChannels}</>);
         });
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -937,6 +1298,15 @@ function App() {
           <Card>
             <Title level={4} center>
               Error loading videos.
+            </Title>
+          </Card>
+        </Center>
+      );
+      setTwitchContent(
+        <Center>
+          <Card>
+            <Title level={4} center>
+              Error loading Twitch channels.
             </Title>
           </Card>
         </Center>
