@@ -310,6 +310,8 @@ function App() {
           background: "url(/img/Majs.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+           height: "23em",
+          position: "relative",
         }}
       >
         <Center>
@@ -317,9 +319,9 @@ function App() {
             <Image
               src="/img/SeasonOne.png"
               alt="React Logo"
-              style={{ width: "100%", maxWidth: "40em" }}
+              style={{ width: "100%", maxWidth: "25em" }}
             />
-            <Center>
+            <Center style={{ position: "absolute", left:"1em",bottom: "1em", width: "95%" }}>
               <Button
                 style={{ width: "90%" }}
                 color="primary"
@@ -342,6 +344,8 @@ function App() {
           background: "url(/img/Spawn2.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          height: "23em",
+          position: "relative",
         }}
       >
         <Center>
@@ -349,9 +353,9 @@ function App() {
             <Image
               src="/img/SeasonTwo.png"
               alt="React Logo"
-              style={{ width: "100%", maxWidth: "40em" }}
+              style={{ width: "100%", maxWidth: "25em" }}
             />
-            <Center>
+            <Center style={{ position: "absolute", left:"1em",bottom: "1em", width: "95%" }}>
               <Flex w="90%">
                 <Button
                   style={{ width: "70%" }}
