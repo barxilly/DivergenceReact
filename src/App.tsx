@@ -339,7 +339,7 @@ function App() {
       </Card>
       <Card
         style={{
-          background: "url(/img/Spawn.webp)",
+          background: "url(/img/Spawn2.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -1204,7 +1204,7 @@ function App() {
         "/img/SeasonThree.png",
         "/img/trevor.png",
         "/img/Majs.webp",
-        "/img/Spawn.webp",
+        "/img/Spawn2.webp",
         "/img/SeasonOne.png",
         "/img/SeasonTwo.png",
         "/img/KatFace.png",
